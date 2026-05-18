@@ -1,9 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+import { Redis } from '@upstash/redis';
 import { v4 as uuidv4 } from 'uuid';
 
-const DATA_DIR  = path.join(process.cwd(), 'data');
-const DATA_FILE = path.join(DATA_DIR, 'bookings.json');
+const kv = new Redis({
+  url:   process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 export type BookingStatus = 'awaiting_payment' | 'confirmed' | 'cancelled';
 
@@ -24,62 +25,52 @@ export interface Booking {
   createdAt: string;
 }
 
-function readAll(): Booking[] {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, '[]', 'utf-8');
-    return [];
-  }
-  try {
-    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8')) as Booking[];
-  } catch {
-    return [];
-  }
-}
-
-function writeAll(bookings: Booking[]): void {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  fs.writeFileSync(DATA_FILE, JSON.stringify(bookings, null, 2), 'utf-8');
-}
-
-export function createBooking(
+export async function createBooking(
   data: Omit<Booking, 'id' | 'createdAt' | 'status'>
-): Booking {
-  const bookings = readAll();
+): Promise<Booking> {
   const booking: Booking = {
     ...data,
     id:        uuidv4(),
     status:    data.paymentStatus === 'not_required' ? 'confirmed' : 'awaiting_payment',
     createdAt: new Date().toISOString(),
   };
-  bookings.push(booking);
-  writeAll(bookings);
+  await Promise.all([
+    kv.set(`booking:${booking.id}`, booking),
+    kv.lpush('booking:list', booking.id),
+  ]);
   return booking;
 }
 
-export function getBookingById(id: string): Booking | undefined {
-  return readAll().find((b) => b.id === id);
+export async function getBookingById(id: string): Promise<Booking | undefined> {
+  return (await kv.get<Booking>(`booking:${id}`)) ?? undefined;
 }
 
-export function getBookingByStripeSession(sessionId: string): Booking | undefined {
-  return readAll().find((b) => b.stripeSessionId === sessionId);
+export async function getBookingByStripeSession(sessionId: string): Promise<Booking | undefined> {
+  const bookingId = await kv.get<string>(`stripe:${sessionId}`);
+  if (!bookingId) return undefined;
+  return getBookingById(bookingId);
 }
 
-export function updateBooking(id: string, updates: Partial<Booking>): Booking | undefined {
-  const bookings = readAll();
-  const index    = bookings.findIndex((b) => b.id === id);
-  if (index === -1) return undefined;
-  bookings[index] = { ...bookings[index], ...updates };
-  writeAll(bookings);
-  return bookings[index];
+export async function linkStripeSession(sessionId: string, bookingId: string): Promise<void> {
+  await kv.set(`stripe:${sessionId}`, bookingId);
 }
 
-export function getAllBookings(): Booking[] {
-  return readAll().sort(
+export async function updateBooking(
+  id: string,
+  updates: Partial<Booking>
+): Promise<Booking | undefined> {
+  const existing = await getBookingById(id);
+  if (!existing) return undefined;
+  const updated = { ...existing, ...updates };
+  await kv.set(`booking:${id}`, updated);
+  return updated;
+}
+
+export async function getAllBookings(): Promise<Booking[]> {
+  const ids = await kv.lrange<string>('booking:list', 0, -1);
+  if (!ids.length) return [];
+  const bookings = await Promise.all(ids.map((id) => getBookingById(id)));
+  return (bookings.filter(Boolean) as Booking[]).sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   );
 }

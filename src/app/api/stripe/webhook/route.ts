@@ -23,10 +23,10 @@ export async function POST(req: NextRequest) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
-    const booking = getBookingByStripeSession(session.id);
+    const booking = await getBookingByStripeSession(session.id);
 
     if (booking) {
-      const confirmed = updateBooking(booking.id, {
+      const confirmed = await updateBooking(booking.id, {
         status:        'confirmed',
         paymentStatus: 'paid',
       });

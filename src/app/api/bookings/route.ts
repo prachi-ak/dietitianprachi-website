@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid service.' }, { status: 400 });
     }
 
-    const booking = createBooking({
+    const booking = await createBooking({
       serviceId,
       serviceName:   service.name,
       servicePrice:  service.price,
@@ -31,7 +31,6 @@ export async function POST(req: NextRequest) {
       paymentStatus: service.price === 0 ? 'not_required' : 'pending',
     });
 
-    // Free bookings confirm instantly — create Meet link and send both emails
     if (service.price === 0) {
       let meetUrl = '';
       if (isGoogleCalendarConfigured()) {

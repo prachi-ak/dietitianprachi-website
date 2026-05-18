@@ -1,11 +1,10 @@
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 import { getAllBookings } from '@/lib/bookings';
 import AdminClient from './AdminClient';
 
 export const dynamic = 'force-dynamic';
 
-export default function AdminPage({
+export default async function AdminPage({
   searchParams,
 }: {
   searchParams: { auth?: string };
@@ -22,7 +21,7 @@ export default function AdminPage({
     return <AdminLogin />;
   }
 
-  const bookings = getAllBookings();
+  const bookings = await getAllBookings();
 
   return <AdminClient bookings={bookings} />;
 }
