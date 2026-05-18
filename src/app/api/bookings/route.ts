@@ -40,10 +40,10 @@ export async function POST(req: NextRequest) {
           console.error('Calendar/Meet creation failed:', err);
         }
       }
-      Promise.allSettled([
+      await Promise.allSettled([
         sendClientReceiptEmail(booking, meetUrl),
         sendAdminNotificationEmail(booking, meetUrl),
-      ]).catch(console.error);
+      ]);
     }
 
     return NextResponse.json({ booking }, { status: 201 });

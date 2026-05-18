@@ -40,10 +40,10 @@ export async function POST(req: NextRequest) {
             console.error('Calendar/Meet creation failed:', err);
           }
         }
-        Promise.allSettled([
+        await Promise.allSettled([
           sendClientReceiptEmail(confirmed, meetUrl),
           sendAdminNotificationEmail(confirmed, meetUrl),
-        ]).catch(console.error);
+        ]);
       }
     }
   }
