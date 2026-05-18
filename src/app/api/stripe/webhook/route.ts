@@ -1,0 +1,54 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { stripe } from '@/lib/stripe';
+import { getBookingByStripeSession, updateBooking } from '@/lib/bookings';
+import { sendClientReceiptEmail, sendAdminNotificationEmail } from '@/lib/email';
+import { createCalendarEvent, isGoogleCalendarConfigured } from '@/lib/googleCalendar';
+import Stripe from 'stripe';
+
+export const config = { api: { bodyParser: false } };
+
+export async function POST(req: NextRequest) {
+  const body      = await req.text();
+  const signature = req.headers.get('stripe-signature');
+
+  if (!signature || !process.env.STRIPE_WEBHOOK_SECRET) {
+    return NextResponse.json({ error: 'Missing signature or webhook secret.' }, { status: 400 });
+  }
+
+  let event: Stripe.Event;
+  try {
+    event = stripe.webhooks.constructEvent(body, signature, process.env.STRIPE_WEBHOOK_SECRET);
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err);
+    return NextResponse.json({ error: 'Invalid signature.' }, { status: 400 });
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object as Stripe.Checkout.Session;
+    const booking = getBookingByStripeSession(session.id);
+
+    if (booking) {
+      const confirmed = updateBooking(booking.id, {
+        status:        'confirmed',
+        paymentStatus: 'paid',
+      });
+
+      if (confirmed) {
+        let meetUrl = '';
+        if (isGoogleCalendarConfigured()) {
+          try {
+            meetUrl = await createCalendarEvent(confirmed);
+          } catch (err) {
+            console.error('Calendar/Meet creation failed:', err);
+          }
+        }
+        Promise.allSettled([
+          sendClientReceiptEmail(confirmed, meetUrl),
+          sendAdminNotificationEmail(confirmed, meetUrl),
+        ]).catch(console.error);
+      }
+    }
+  }
+
+  return NextResponse.json({ received: true });
+}
