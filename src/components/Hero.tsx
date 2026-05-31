@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -34,13 +35,19 @@ export default function Hero() {
         </div>
 
         <div className="hidden md:flex justify-center">
-          <div
-            className="relative w-80 h-80 rounded-full bg-sage-100 border border-sage-200 flex items-center justify-center"
-          >
-            <div className="absolute inset-6 rounded-full bg-sage-200/60 border border-sage-300/40" />
-            <div className="relative text-center">
-              <p className="font-serif text-sage-800 text-2xl">Prachi Acharekar</p>
-              <p className="font-sans text-sage-500 text-xs mt-1 tracking-widest uppercase">Dietitian</p>
+          <div className="relative">
+            <div className="w-72 h-[420px] rounded-3xl overflow-hidden border border-sage-200 shadow-lg">
+              <Image
+                src="/professional-pic.jpg"
+                alt="Prachi Acharekar — The Integrative Dietitian"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-white border border-sage-100 rounded-2xl px-5 py-3 shadow-sm">
+              <p className="font-serif text-sage-800 text-base leading-tight">Prachi Acharekar</p>
+              <p className="font-sans text-sage-500 text-xs tracking-widest uppercase mt-0.5">HCPC Registered Dietitian</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
@@ -7,7 +8,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <p className="font-serif text-xl text-white mb-3">Dietitian Prachi</p>
+            <Image
+              src="/logo.png"
+              alt="Prachi — The Integrative Dietitian"
+              width={110}
+              height={55}
+              className="h-14 w-auto object-contain mb-3 brightness-0 invert"
+            />
             <p className="font-sans text-sage-300 text-sm leading-relaxed">
               Evidence-based, personalised nutrition care by Prachi Acharekar,
               HCPC Registered Dietitian.
