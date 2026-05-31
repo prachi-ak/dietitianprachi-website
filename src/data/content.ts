@@ -1,6 +1,8 @@
 export const services = [
   {
     id: 'discovery-call',
+    group: 'discovery' as const,
+    groupLabel: 'Free Discovery Call',
     name: 'Free Discovery Call',
     duration: '15 minutes',
     price: 0,
@@ -15,34 +17,84 @@ export const services = [
     ],
   },
   {
-    id: 'initial-assessment',
-    name: 'Initial Assessment and Lifestyle Plan',
+    id: 'general-initial',
+    group: 'general' as const,
+    groupLabel: 'Personalised Nutrition & Lifestyle Support',
+    name: 'Initial Consultation',
+    duration: '60 minutes',
+    price: 135,
+    currency: 'GBP',
+    description:
+      'A comprehensive assessment of your medical history, diet, and lifestyle, resulting in a fully personalised nutrition and lifestyle plan.',
+    features: [
+      'Full medical and dietary history',
+      'Assessment of symptoms and lifestyle factors',
+      'Identification of key nutritional priorities and contributing factors',
+      'Personalised nutrition and lifestyle plan',
+      'Plan review call (10–15 minutes)',
+      'One email check-in within one week',
+    ],
+    conditions: [
+      'Type 2 diabetes & insulin resistance (metabolic health)',
+      'Cardiovascular health & high blood pressure',
+      'Gut health concerns (IBS, GERD, other digestive symptoms)',
+      'PCOS, thyroid dysfunction, perimenopause & menopause',
+      'Weight management and related metabolic health concerns',
+      'Autoimmune conditions',
+    ],
+  },
+  {
+    id: 'general-followup',
+    group: 'general' as const,
+    groupLabel: 'Personalised Nutrition & Lifestyle Support',
+    name: 'Follow-Up Consultation',
+    duration: '30 minutes',
+    price: 50,
+    currency: 'GBP',
+    description:
+      'A structured review to assess progress, refine your plan, and provide ongoing support for long-term results.',
+    features: [
+      'Review progress and symptoms',
+      'Adjust nutrition and lifestyle plan based on outcomes',
+      'Provide ongoing education and support',
+      'Support behaviour change and long-term results',
+    ],
+  },
+  {
+    id: 'oncology-initial',
+    group: 'oncology' as const,
+    groupLabel: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support',
+    name: 'Initial Consultation',
     duration: '60 minutes',
     price: 150,
     currency: 'GBP',
     description:
-      'A thorough review of your dietary habits, health history, and lifestyle, culminating in a fully personalised nutrition and wellness plan built around you.',
+      'A specialist assessment providing evidence-based nutritional and lifestyle care for individuals undergoing cancer treatment, recovery, or survivorship.',
     features: [
-      'In-depth dietary and lifestyle assessment',
-      'Review of medical history and health goals',
-      'Personalised nutrition plan',
-      'Sleep and exercise recommendations',
-      'Written summary and resources',
+      'Full clinical and treatment history review',
+      'Symptom and nutritional risk assessment',
+      'Personalised cancer nutrition and lifestyle plan',
+      'Strategies for managing treatment side effects',
+      'Follow-up review call (10–15 minutes)',
+      'One email check-in within one week',
     ],
   },
   {
-    id: 'follow-up',
+    id: 'oncology-followup',
+    group: 'oncology' as const,
+    groupLabel: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support',
     name: 'Follow-Up Consultation',
-    duration: '60 minutes',
-    price: 60,
+    duration: '45 minutes',
+    price: 70,
     currency: 'GBP',
     description:
-      'A progress review to see how your plan is working, address any challenges, and refine your recommendations as your needs evolve.',
+      'Ongoing specialist support to monitor nutrition status, manage symptoms, and adjust your plan throughout treatment and recovery.',
     features: [
-      'Progress and outcome review',
-      'Plan adjustments',
-      'Addressing barriers and questions',
-      'Updated recommendations',
+      'Monitor nutrition status during treatment or recovery',
+      'Manage ongoing symptoms and side effects',
+      'Adjust nutrition and lifestyle strategies as needed',
+      'Provide ongoing reassurance and clinical guidance',
+      'Support quality of life and wellbeing',
     ],
   },
 ];
@@ -92,58 +144,62 @@ export const faqs = [
 
 export const blogs = [
   {
-    slug: 'four-pillars-of-optimal-health',
-    title: 'The Four Pillars of Optimal Health',
-    date: '12 April 2025',
+    slug: 'four-pillars-of-health',
+    title: 'The 4 Pillars of Health: Why Nutrition Alone Is Not Enough',
+    date: '15 May 2025',
     readTime: '5 min read',
     excerpt:
-      'Good health is not a single variable. It is the sum of four interconnected pillars, and neglecting any one of them limits the potential of the others.',
+      'While food plays a vital role in wellbeing, health is rarely shaped by nutrition alone. Sleep, movement, stress, and emotional wellbeing all interact to influence energy, hormones, immunity, and long-term disease risk.',
     content: `
-<p>Good health is rarely the product of one single change. You can follow the most carefully constructed nutrition plan in the world, but if you are sleeping four hours a night, your body's ability to regulate hunger hormones, recover from exercise, and manage inflammation is significantly compromised. Health is not a single variable. It is the sum of four interconnected pillars, and neglecting any one of them limits the potential of the others.</p>
+<p>When people think about improving their health, nutrition is often the first focus. While food plays a vital role in wellbeing, health is rarely shaped by nutrition alone. Sleep, movement, stress, emotional wellbeing, and daily lifestyle habits all interact to influence energy levels, hormonal balance, metabolic health, immunity, and long-term disease risk.</p>
 
-<p>Those four pillars are Balanced Nutrition, Quality Sleep, Adequate Exercise, and Emotional Well-being. They form the foundation of my practice at Dietitian Prachi, and understanding why each one matters is the first step towards building a life where you feel genuinely well.</p>
+<p>Your lifestyle is the blueprint of your health. Sustainable wellbeing is built through the consistent interaction of several key lifestyle factors that support both physical and emotional health over time.</p>
 
-<h2>Balanced Nutrition</h2>
-<p>Nutrition is the most visible pillar, and the one most people focus on first. But balanced nutrition is not about restriction or perfection. It is about giving the body a consistent supply of the macro and micronutrients it needs to function well, while building a relationship with food that is sustainable over the long term. Protein for tissue repair and satiety, complex carbohydrates for steady energy, healthy fats for hormone production and brain function, and an abundance of plants for fibre, phytonutrients, and gut diversity. There is no single diet that works for everyone, which is precisely why individualised assessment matters.</p>
+<p>As a dietitian working across metabolic health, gut health, women's health, oncology support, and chronic disease management, I often see how addressing lifestyle as a whole creates more meaningful and lasting improvements than focusing on food in isolation. These are what I consider the four foundational pillars of health.</p>
 
-<h2>Quality Sleep</h2>
-<p>Sleep is when the body does most of its repair work. During deep sleep, growth hormone is released, memories are consolidated, and the immune system carries out much of its housekeeping. Chronic poor sleep is associated with increased levels of the hunger hormone ghrelin and reduced leptin, the satiety hormone, which creates a physiological pull towards overeating. It is also linked to insulin resistance, elevated cortisol, and impaired cognitive function. If sleep is consistently disrupted, addressing it is not optional. It is foundational.</p>
+<h2>1. Nutrition: Supporting Health Beyond Calories</h2>
+<p>Nutrition is not simply about restriction, calorie counting, or following trends. Food provides the body with the nutrients required to support healthy cellular function, energy production, hormone regulation, gut health, immune function, metabolic balance, and recovery.</p>
+<p>In many ways, food acts as information for our cells. Nourishing, balanced food supports healthy cellular function, while a poor-quality diet can negatively influence how the body functions over time.</p>
+<p>A personalised approach to nutrition is essential because no single diet works for everyone. Medical history, lifestyle, stress levels, sleep, movement, cultural food preferences, and individual health conditions all influence nutritional needs. Rather than striving for perfection, sustainable nutrition is about building realistic habits that support long-term health and fit into everyday life.</p>
 
-<h2>Adequate Exercise</h2>
-<p>Exercise does not need to be extreme to be effective. What the evidence consistently supports is regular movement that raises the heart rate, builds or maintains muscle mass, and fits into a lifestyle that makes it sustainable. Walking, swimming, resistance training, cycling, yoga: the form matters less than the consistency. Movement improves insulin sensitivity, supports bone density, reduces anxiety, and contributes directly to better sleep. It is also one of the most powerful tools for long-term metabolic health.</p>
+<h2>2. Movement &amp; Exercise: Supporting Physical and Metabolic Health</h2>
+<p>Movement plays a vital role in both physical and mental wellbeing. Regular activity supports cardiovascular health, insulin sensitivity, muscle strength, digestion, mobility, stress regulation, energy levels, and healthy circulation, all of which contribute to overall health and wellbeing.</p>
+<p>Importantly, movement does not always need to mean intense exercise. Walking, resistance training, stretching, mobility work, and consistent daily activity can all positively influence health outcomes. The goal is not punishment or simply "burning calories," but creating a sustainable relationship with movement that supports long-term wellbeing.</p>
 
-<h2>Emotional Well-being</h2>
-<p>The link between psychological state and physical health is well established. Chronic stress elevates cortisol, which promotes fat storage around the abdomen, disrupts sleep, and suppresses immune function. Emotional eating, food restriction cycles, and disordered patterns around eating are rarely purely about food. They are often rooted in emotional experience. Addressing well-being, stress, and mindset is not a supplement to nutrition work. In many cases, it is the work.</p>
+<h2>3. Sleep: The Often Overlooked Pillar of Health</h2>
+<p>Sleep is one of the most underestimated factors influencing health. Poor sleep can negatively affect appetite regulation, blood sugar balance, energy levels, mood, recovery, hormonal health, immunity, and stress resilience.</p>
+<p>During sleep, the body carries out essential repair and restoration processes that support both physical and mental wellbeing. In clinical practice, I often see how disrupted sleep patterns contribute to cravings, emotional eating, fatigue, and metabolic health challenges. Improving sleep quality and establishing healthier routines can have a significant impact on overall wellbeing and daily functioning.</p>
 
-<p>Understanding how these four pillars interact in your own life is the beginning of a genuinely personalised approach to health. That is the lens through which I work with every client.</p>
+<h2>4. Stress &amp; Emotional Wellbeing: Understanding the Mind-Body Connection</h2>
+<p>Chronic stress affects far more than mental health alone. When the body remains in a prolonged fight-or-flight state, it prioritises short-term survival over long-term restoration and recovery. Over time, this can influence digestion, hormonal balance, inflammation, immunity, appetite, sleep, blood sugar regulation, and overall quality of life.</p>
+<p>Many lifestyle habits are closely linked to emotional wellbeing, stress patterns, routines, and coping mechanisms. This is why sustainable health changes often require more than meal plans alone. Creating awareness around stress management, emotional health, boundaries, recovery, relaxation, and self-care can play an important role in supporting long-term lifestyle change.</p>
+
+<h2>Health Is Built Through Consistency, Not Perfection</h2>
+<p>There is no "perfect" lifestyle. Sustainable health is built through small, realistic, and consistent habits over time. Nutrition matters deeply, but food does not work in isolation. Movement, sleep, stress management, emotional wellbeing, and daily routines all interact together to influence health outcomes.</p>
+<p>A personalised and holistic approach allows individuals to better understand the underlying factors contributing to their health, rather than simply managing symptoms alone. Because ultimately, your lifestyle is the blueprint of your health.</p>
     `.trim(),
   },
+];
+
+export const testimonials = [
   {
-    slug: 'nutrition-myths-what-science-says',
-    title: 'Common Nutrition Myths: What the Evidence Actually Shows',
-    date: '28 March 2025',
-    readTime: '6 min read',
-    excerpt:
-      'From cutting out carbohydrates to the idea that detox diets cleanse the body, nutrition is one of the most myth-laden fields in health. Here is what the evidence actually says.',
-    content: `
-<p>Few areas of health communication are as riddled with misinformation as nutrition. Social media, wellness culture, and a constant cycle of headline-grabbing studies have produced a landscape where genuinely harmful advice sits alongside genuinely useful guidance, and most people struggle to tell them apart. Here are some of the most persistent myths, and what the evidence actually shows.</p>
-
-<h2>Myth: Carbohydrates Make You Gain Weight</h2>
-<p>Weight gain is driven by a sustained caloric surplus over time, not by any single macronutrient. Carbohydrates are the body's primary and preferred energy source, particularly for brain function and high-intensity exercise. The quality and quantity of carbohydrates matters enormously: refined sugars and highly processed foods behave very differently in the body compared to legumes, wholegrains, and vegetables. Eliminating carbohydrates entirely is neither necessary nor, for most people, sustainable over the long term.</p>
-
-<h2>Myth: Detox Diets Cleanse the Body</h2>
-<p>The liver, kidneys, lungs, and skin perform continuous, highly sophisticated detoxification as part of their normal function. There is no clinical evidence that any commercially available detox product or juice cleanse enhances this process. What these products often do is create a significant caloric deficit for a short period, which may produce rapid initial weight loss that is primarily water and glycogen, not fat. The weight typically returns as soon as normal eating resumes. Supporting the body's natural detoxification systems involves adequate hydration, sufficient fibre, minimising alcohol, and eating a varied whole-food diet.
-
-<h2>Myth: Eating Fat Makes You Fat</h2>
-<p>This myth has its roots in the low-fat dietary guidance that dominated the 1980s and 1990s, which was not well supported by the evidence and contributed to a surge in consumption of low-fat processed foods high in refined sugar. Dietary fat is essential: it supports hormone production, fat-soluble vitamin absorption, cell membrane integrity, and satiety. The type of fat matters more than the quantity. Unsaturated fats from olive oil, avocados, nuts, and oily fish are associated with positive cardiovascular outcomes. Trans fats and excessive saturated fats from highly processed sources are the ones worth limiting.</p>
-
-<h2>Myth: You Must Eat Six Small Meals a Day to Keep Your Metabolism Running</h2>
-<p>The idea that eating frequency significantly affects metabolic rate is not well supported by the evidence. Total caloric intake and food quality over the course of a day are far more important than how frequently that intake is distributed. What does matter is finding an eating pattern that works for your lifestyle, supports stable energy levels, and makes it easier to eat nutritious food consistently. For some people, that is three meals. For others, it is two. Neither is inherently superior.</p>
-
-<h2>Myth: Supplements Can Replace a Poor Diet</h2>
-<p>Isolated nutrients rarely behave in the body the same way that nutrients in whole food do. Nutrients in food exist within a complex matrix of fibre, phytonutrients, and cofactors that affect how they are absorbed and utilised. Some supplementation has genuine clinical applications, particularly in cases of deficiency or specific health conditions, and certain groups have increased needs. But a multivitamin is not a shortcut past a diet that is consistently lacking in vegetables, variety, and minimally processed food.</p>
-
-<p>Navigating nutrition well requires sorting signal from noise. If you are unsure which advice applies to your situation, a consultation with a registered dietitian is the most reliable way to get evidence-based guidance tailored to your individual health picture.</p>
-    `.trim(),
+    quote:
+      "Prachi's approach was supportive, knowledgeable, and highly personalised. She took the time to listen carefully and provided practical, realistic strategies tailored to our needs. Her guidance around nutrition, lifestyle, and long-term health felt both evidence-based and holistic. Since working with her, we have seen significant improvements in our health, including improvements in blood sugar levels, blood pressure and overall wellbeing.",
+    client: 'Metabolic health client',
+  },
+  {
+    quote:
+      "After many years of struggling with painful menstrual symptoms, I felt genuinely supported through Prachi's personalised and holistic approach. Her guidance around nutrition, lifestyle, and wellbeing helped me feel more in control of my health and significantly improved my quality of life.",
+    client: 'Hormonal health client',
+  },
+  {
+    quote:
+      "Prachi's guidance helped me make sustainable lifestyle and nutrition changes that significantly improved my overall health and wellbeing. Following years of struggling with multiple health concerns, including acid reflux, migraines, joint pain, poor sleep, and weight gain, I began to feel more energetic, healthier, and more confident in managing my health naturally. Her supportive and personalised approach helped me better understand my body and build long-term habits that felt realistic and achievable.",
+    client: 'Gut & overall health client',
+  },
+  {
+    quote:
+      'Following a cancer diagnosis, I was looking for guidance and support to help me navigate treatment and recovery. Prachi provided compassionate, personalised nutrition and lifestyle support throughout my chemotherapy and radiotherapy journey. Her practical guidance helped me feel more supported, confident, and better able to manage my wellbeing during a very challenging time.',
+    client: 'Oncology client',
   },
 ];

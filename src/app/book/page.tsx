@@ -13,10 +13,18 @@ const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   : null;
 
 const SERVICE_DURATION: Record<string, number> = {
-  'discovery-call':       15,
-  'initial-assessment':   60,
-  'follow-up':            60,
+  'discovery-call':     15,
+  'general-initial':    60,
+  'general-followup':   30,
+  'oncology-initial':   60,
+  'oncology-followup':  45,
 };
+
+const BOOKING_GROUPS = [
+  { key: 'discovery', label: null },
+  { key: 'general',   label: 'Personalised Nutrition & Lifestyle Support' },
+  { key: 'oncology',  label: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support' },
+] as const;
 
 function generateAvailableDates(): Date[] {
   const dates: Date[] = [];
@@ -183,39 +191,54 @@ function BookingContent() {
           {step === 1 && (
             <div>
               <h2 className="font-serif text-sage-800 text-xl mb-6">Choose a Service</h2>
-              <div className="flex flex-col gap-4">
-                {services.map((s) => (
-                  <label
-                    key={s.id}
-                    className={`flex items-start gap-4 border rounded-lg p-5 cursor-pointer transition-colors ${
-                      form.serviceId === s.id
-                        ? 'border-sage-400 bg-sage-50'
-                        : 'border-sage-100 hover:border-sage-200'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="service"
-                      value={s.id}
-                      checked={form.serviceId === s.id}
-                      onChange={() => update('serviceId', s.id)}
-                      className="mt-1 accent-sage-500"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <p className="font-serif text-sage-800">{s.name}</p>
-                        <p className="font-sans text-sage-700 text-sm font-medium">
-                          {s.price === 0 ? 'Free' : `£${s.price}`}
+              <div className="flex flex-col gap-6">
+                {BOOKING_GROUPS.map(({ key, label }) => {
+                  const groupServices = services.filter((s) => s.group === key);
+                  if (groupServices.length === 0) return null;
+                  return (
+                    <div key={key}>
+                      {label && (
+                        <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-3 pb-2 border-b border-sage-100">
+                          {label}
                         </p>
+                      )}
+                      <div className="flex flex-col gap-3">
+                        {groupServices.map((s) => (
+                          <label
+                            key={s.id}
+                            className={`flex items-start gap-4 border rounded-lg p-5 cursor-pointer transition-colors ${
+                              form.serviceId === s.id
+                                ? 'border-sage-400 bg-sage-50'
+                                : 'border-sage-100 hover:border-sage-200'
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              name="service"
+                              value={s.id}
+                              checked={form.serviceId === s.id}
+                              onChange={() => update('serviceId', s.id)}
+                              className="mt-1 accent-sage-500"
+                            />
+                            <div className="flex-1">
+                              <div className="flex items-center justify-between mb-1">
+                                <p className="font-serif text-sage-800">{s.name}</p>
+                                <p className="font-sans text-sage-700 text-sm font-medium">
+                                  {s.price === 0 ? 'Free' : `£${s.price}`}
+                                </p>
+                              </div>
+                              <div className="flex items-center gap-1.5 text-sage-400 mb-2">
+                                <Clock size={12} />
+                                <span className="font-sans text-xs">{s.duration}</span>
+                              </div>
+                              <p className="font-sans text-sage-600 text-sm leading-relaxed">{s.description}</p>
+                            </div>
+                          </label>
+                        ))}
                       </div>
-                      <div className="flex items-center gap-1.5 text-sage-400 mb-2">
-                        <Clock size={12} />
-                        <span className="font-sans text-xs">{s.duration}</span>
-                      </div>
-                      <p className="font-sans text-sage-600 text-sm leading-relaxed">{s.description}</p>
                     </div>
-                  </label>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

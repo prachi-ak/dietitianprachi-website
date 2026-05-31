@@ -2,19 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
-const links = [
-  { href: '#about',    label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#blog',     label: 'Blog' },
-  { href: '#faq',      label: 'FAQ' },
-  { href: '#contact',  label: 'Contact' },
+const anchors = [
+  { anchor: '#about',    label: 'About' },
+  { anchor: '#services', label: 'Services' },
+  { anchor: '#blog',     label: 'Blog' },
+  { anchor: '#faq',      label: 'FAQ' },
+  { anchor: '#contact',  label: 'Contact' },
 ];
 
 export default function Navbar() {
   const [open,      setOpen]      = useState(false);
   const [scrolled,  setScrolled]  = useState(false);
+  const pathname = usePathname();
+  const isHome   = pathname === '/';
+  const links    = anchors.map((l) => ({ href: isHome ? l.anchor : `/${l.anchor}`, label: l.label }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);

@@ -19,7 +19,7 @@ export default function Blog() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 max-w-2xl mx-auto w-full">
           {blogs.map((post) => (
             <article
               key={post.slug}
