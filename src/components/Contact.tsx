@@ -8,7 +8,7 @@ export default function Contact() {
           <div>
             <p className="section-label">Contact</p>
             <h2 className="section-heading text-4xl mb-6">Get in Touch</h2>
-            <p className="font-sans text-sage-600 leading-relaxed mb-8">
+            <p className="font-sans text-sage-600 text-base leading-relaxed mb-8">
               For any questions not covered in the FAQ, or to discuss a corporate nutrition
               programme, please reach out directly. Prachi aims to respond within one business
               day.

@@ -5,7 +5,7 @@ import { Linkedin, Instagram } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-sage-900 text-white py-14">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
             <Image
@@ -20,7 +20,7 @@ export default function Footer() {
               HCPC Registered Dietitian.
             </p>
             <p className="font-sans text-sage-400 text-xs mt-3">
-              HCPC No. DT035388 &bull; BDA No. 1031144
+              HCPC Registered Dietitian &bull; BDA Full Member
             </p>
           </div>
 
@@ -85,9 +85,13 @@ export default function Footer() {
           <p className="font-sans text-xs text-sage-500">
             &copy; {new Date().getFullYear()} Dietitian Prachi by Prachi Acharekar. All rights reserved.
           </p>
-          <p className="font-sans text-xs text-sage-500">
-            Online worldwide &bull; In-person in the United Kingdom
-          </p>
+          <div className="flex items-center gap-4 font-sans text-xs text-sage-500">
+            <Link href="/terms"   className="hover:text-sage-300 transition-colors">Terms & Conditions</Link>
+            <span>&bull;</span>
+            <Link href="/privacy" className="hover:text-sage-300 transition-colors">Privacy Policy</Link>
+            <span>&bull;</span>
+            <span>Online worldwide &bull; In-person in London</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 export default function Blog() {
   return (
     <section id="blog" className="py-24 bg-sage-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="section-label">Insights</p>
@@ -13,9 +13,9 @@ export default function Blog() {
           </div>
           <Link
             href="/blog"
-            className="hidden md:flex items-center gap-2 font-sans text-sm text-sage-500 hover:text-sage-700 transition-colors"
+            className="hidden md:flex items-center gap-2 font-sans text-base text-sage-500 hover:text-sage-700 transition-colors"
           >
-            View all <ArrowRight size={14} />
+            View all <ArrowRight size={16} />
           </Link>
         </div>
 
@@ -27,22 +27,22 @@ export default function Blog() {
             >
               <div className="h-2 bg-sage-200" />
               <div className="p-8">
-                <div className="flex items-center gap-3 mb-4 font-sans text-xs text-sage-400">
+                <div className="flex items-center gap-3 mb-4 font-sans text-sm text-sage-400">
                   <span>{post.date}</span>
                   <span>·</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="font-serif text-sage-800 text-xl mb-3 leading-snug">
+                <h3 className="font-serif text-sage-800 text-2xl mb-3 leading-snug">
                   {post.title}
                 </h3>
-                <p className="font-sans text-sage-600 text-sm leading-relaxed mb-6">
+                <p className="font-sans text-sage-600 text-base leading-relaxed mb-6">
                   {post.excerpt}
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="font-sans text-sm text-sage-500 hover:text-sage-700 transition-colors flex items-center gap-1.5"
+                  className="font-sans text-base text-sage-500 hover:text-sage-700 transition-colors flex items-center gap-1.5"
                 >
-                  Read article <ArrowRight size={13} />
+                  Read article <ArrowRight size={14} />
                 </Link>
               </div>
             </article>

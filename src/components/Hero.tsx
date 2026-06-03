@@ -13,7 +13,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-20 grid md:grid-cols-2 gap-16 items-center">
         <div>
           <p className="section-label">HCPC Registered Dietitian</p>
           <h1 className="font-serif text-5xl md:text-6xl text-sage-900 leading-[1.1] mb-6">
@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
             <div className="absolute -bottom-4 -left-4 bg-white border border-sage-100 rounded-2xl px-5 py-3 shadow-sm">
               <p className="font-serif text-sage-800 text-base leading-tight">Prachi Acharekar</p>
-              <p className="font-sans text-sage-500 text-xs tracking-widest uppercase mt-0.5">HCPC Registered Dietitian</p>
+              <p className="font-sans text-sage-500 text-xs tracking-widest uppercase mt-0.5">The Integrative Dietitian</p>
             </div>
           </div>
         </div>

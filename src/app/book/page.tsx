@@ -16,7 +16,7 @@ const SERVICE_DURATION: Record<string, number> = {
   'discovery-call':     15,
   'general-initial':    60,
   'general-followup':   30,
-  'oncology-initial':   60,
+  'oncology-initial':   75,
   'oncology-followup':  45,
 };
 
@@ -398,7 +398,7 @@ function BookingContent() {
               {selectedService.price > 0 ? (
                 <p className="font-sans text-xs text-sage-500 leading-relaxed mb-4">
                   You will be redirected to Stripe to complete your payment securely. Once
-                  payment is confirmed your appointment is set — a confirmation email with
+                  payment is confirmed your appointment is set. A confirmation email with
                   your Google Meet link will be sent to you automatically.
                 </p>
               ) : (

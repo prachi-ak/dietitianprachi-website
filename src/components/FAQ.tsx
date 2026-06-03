@@ -34,7 +34,7 @@ export default function FAQ() {
                 </span>
               </button>
               {openIndex === i && (
-                <p className="font-sans text-sage-600 text-sm leading-relaxed mt-3 pr-8">
+                <p className="font-sans text-sage-600 text-base leading-relaxed mt-3 pr-8">
                   {item.answer}
                 </p>
               )}

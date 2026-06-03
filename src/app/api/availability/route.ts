@@ -17,8 +17,11 @@ export async function GET(req: NextRequest) {
   }
 
   if (!isGoogleCalendarConfigured()) {
-    // Google Calendar not yet connected — return all slots
-    return NextResponse.json({ slots: ALL_SLOTS, calendarConnected: false });
+    const slots = ALL_SLOTS.filter((slot) => {
+      const [h, m] = slot.split(':').map(Number);
+      return h * 60 + m + duration <= 14 * 60; // must finish by 2pm
+    });
+    return NextResponse.json({ slots, calendarConnected: false });
   }
 
   try {

@@ -1,5 +1,5 @@
 Personalised Nutrition &amp; Lifestyle Support
-Initial Consultation — £135 (60 minutes)
+Initial Consultation — £120 (60 minutes)
 A comprehensive assessment including:
  Full medical and dietary history
  Assessment of symptoms and lifestyle factors
@@ -8,7 +8,7 @@ A comprehensive assessment including:
  Plan review call (10–15 minutes)
  One email check-in within one week
 
-Follow-Up Consultation - £50 (30 minutes)
+Follow-Up Consultation - £60 (30 minutes)
 A structured review session to:
  Review progress and symptoms
  Adjust nutrition and lifestyle plan based on outcomes
@@ -36,21 +36,22 @@ This includes support for:
 The aim is to support nutritional status, strength, and quality of life throughout
 treatment and recovery.
 
-Initial Consultation — £150 (60 minutes)
+Initial Consultation — £150 (75 minutes)
 A specialist assessment including:
  Full clinical and treatment history review
  Symptom and nutritional risk assessment
  Personalised cancer nutrition and lifestyle plan
  Strategies for managing treatment side effects
- Follow-up review call (10–15 minutes)
+ Follow-up Plan review call (10–15 minutes)
  One email check-in within one week
 
-Follow-Up Consultation — £70 (45 minutes)
+Follow-Up Consultation — £90 (45 minutes)
  Monitor nutrition status during treatment or recovery
- Manage ongoing symptoms and side effects
+ Help manage ongoing symptoms and side effects
  Adjust nutrition and lifestyle strategies as needed
  Provide ongoing reassurance and clinical guidance
  Support quality of life and wellbeing
 
-HCPC-registered dietitian offering evidence-based nutrition consultations online across the
-UK, with international appointments available where appropriate.
+HCPC-registered dietitian offering evidence-based nutrition and lifestyle consultations
+online across the UK and internationally (where appropriate), face-to-face consultations in
+selected London locations.

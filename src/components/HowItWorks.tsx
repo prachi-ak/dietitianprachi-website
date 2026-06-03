@@ -12,14 +12,14 @@ const steps = [
   {
     number: '03',
     title:  'Secure Your Booking',
-    desc:   'Complete your details and, where applicable, pay securely via Stripe. You will receive a confirmation once Prachi approves your booking.',
+    desc:   'Complete your details and, where applicable, pay securely via Stripe. You will receive a confirmation email with your video call link once the booking is confirmed.',
   },
 ];
 
 export default function HowItWorks() {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <p className="section-label">Process</p>
           <h2 className="section-heading text-4xl mb-4">How It Works</h2>
@@ -31,8 +31,8 @@ export default function HowItWorks() {
               <span className="font-serif text-5xl text-sage-200 leading-none mb-4 select-none">
                 {step.number}
               </span>
-              <p className="font-serif text-sage-800 text-lg mb-3">{step.title}</p>
-              <p className="font-sans text-sage-600 text-sm leading-relaxed">{step.desc}</p>
+              <p className="font-serif text-sage-800 text-xl mb-3">{step.title}</p>
+              <p className="font-sans text-sage-600 text-base leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

@@ -12,7 +12,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 bg-sage-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="section-label">Services</p>
           <h2 className="section-heading text-4xl mb-4">How We Work Together</h2>
@@ -22,7 +22,7 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Free discovery call — full-width highlighted card */}
+        {/* Free discovery call */}
         {discoveryCall && (
           <div className="bg-sage-800 rounded-lg p-8 mb-14 flex flex-col sm:flex-row sm:items-center gap-6">
             <div className="flex-1">
@@ -32,9 +32,9 @@ export default function Services() {
               <p className="font-serif text-white text-2xl mb-2">{discoveryCall.name}</p>
               <div className="flex items-center gap-1.5 text-sage-300 mb-3">
                 <Clock size={13} />
-                <span className="font-sans text-xs">{discoveryCall.duration}</span>
+                <span className="font-sans text-sm">{discoveryCall.duration}</span>
               </div>
-              <p className="font-sans text-sage-200 text-sm leading-relaxed max-w-lg">
+              <p className="font-sans text-sage-200 text-base leading-relaxed max-w-lg">
                 {discoveryCall.description}
               </p>
             </div>
@@ -69,14 +69,14 @@ export default function Services() {
 
                       <div className="flex items-center gap-1.5 text-sage-500 mb-4">
                         <Clock size={13} />
-                        <span className="font-sans text-xs">{s.duration}</span>
+                        <span className="font-sans text-sm">{s.duration}</span>
                       </div>
 
                       <div className="mb-5">
                         <span className="font-serif text-3xl text-sage-700">£{s.price}</span>
                       </div>
 
-                      <p className="font-sans text-sage-600 text-sm leading-relaxed mb-6 flex-1">
+                      <p className="font-sans text-sage-600 text-base leading-relaxed mb-6 flex-1">
                         {s.description}
                       </p>
 
@@ -103,7 +103,7 @@ export default function Services() {
                   <div className="mt-6 bg-white border border-sage-100 rounded-lg p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <Info size={15} className="text-sage-400 flex-shrink-0" />
-                      <p className="font-sans text-sm font-medium text-sage-700">
+                      <p className="font-sans text-base font-medium text-sage-700">
                         Conditions supported include:
                       </p>
                     </div>
