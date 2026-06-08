@@ -76,11 +76,11 @@ export default function Services() {
                         <span className="font-serif text-3xl text-sage-700">£{s.price}</span>
                       </div>
 
-                      <p className="font-sans text-sage-600 text-base leading-relaxed mb-6 flex-1">
+                      <p className="font-sans text-sage-600 text-base leading-relaxed mb-6">
                         {s.description}
                       </p>
 
-                      <ul className="space-y-2.5 mb-8">
+                      <ul className="space-y-2.5 mb-8 flex-1">
                         {s.features.map((f, fi) => (
                           <li key={fi} className="flex items-start gap-2.5">
                             <CheckCircle2 size={15} className="text-sage-400 flex-shrink-0 mt-0.5" />

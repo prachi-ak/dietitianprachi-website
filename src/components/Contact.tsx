@@ -16,7 +16,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-5">
               <a
-                href="mailto:prachi@dietitianprachi.co.uk"
+                href="mailto:prachi@dietitianprachi.com"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 rounded-full bg-sage-100 border border-sage-200 flex items-center justify-center flex-shrink-0 group-hover:bg-sage-200 transition-colors">
@@ -25,7 +25,7 @@ export default function Contact() {
                 <div>
                   <p className="font-sans text-xs text-sage-400 uppercase tracking-widest mb-0.5">Email</p>
                   <p className="font-sans text-sm text-sage-700 group-hover:text-sage-500 transition-colors">
-                    prachi@dietitianprachi.co.uk
+                    prachi@dietitianprachi.com
                   </p>
                 </div>
               </a>
@@ -69,7 +69,7 @@ export default function Contact() {
           <div className="bg-white border border-sage-100 rounded-lg p-8">
             <p className="font-serif text-sage-800 text-xl mb-6">Send a Message</p>
             <form
-              action="mailto:prachi@dietitianprachi.co.uk"
+              action="mailto:prachi@dietitianprachi.com"
               method="get"
               encType="text/plain"
               className="flex flex-col gap-4"

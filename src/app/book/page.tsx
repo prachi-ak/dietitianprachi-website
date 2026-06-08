@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { services } from '@/data/content';
 import { format, addDays, startOfDay, isWeekend } from 'date-fns';
-import { ChevronLeft, Clock, CheckCircle2, CalendarDays, Loader2 } from 'lucide-react';
+import { ChevronLeft, Clock, CheckCircle2, CalendarDays, Loader2, X } from 'lucide-react';
 import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -57,6 +57,7 @@ function BookingContent() {
   const [error,           setError]           = useState('');
   const [availableSlots,  setAvailableSlots]  = useState<string[]>([]);
   const [slotsLoading,    setSlotsLoading]    = useState(false);
+  const [showTerms,       setShowTerms]       = useState(false);
   const [form, setForm] = useState<FormData>({
     serviceId: params.get('service') || '',
     date:      '',
@@ -437,7 +438,7 @@ function BookingContent() {
               </button>
             ) : (
               <button
-                onClick={handleSubmit}
+                onClick={() => setShowTerms(true)}
                 disabled={loading}
                 className={`btn-primary py-2.5 px-7 text-sm ${loading ? 'opacity-60 cursor-wait' : ''}`}
               >
@@ -451,6 +452,81 @@ function BookingContent() {
           </div>
         </div>
       </div>
+      {/* Terms & Conditions modal */}
+      {showTerms && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg flex flex-col max-h-[85vh]">
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-sage-100 flex-shrink-0">
+              <h2 className="font-serif text-sage-900 text-xl">Terms &amp; Conditions</h2>
+              <button
+                onClick={() => setShowTerms(false)}
+                className="text-sage-400 hover:text-sage-700 transition-colors"
+                aria-label="Close"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Scrollable content */}
+            <div className="overflow-y-auto px-6 py-5 flex-1 space-y-5 font-sans text-sm text-sage-700 leading-relaxed">
+              <p>By booking an appointment with Prachi Acharekar (HCPC Registered Dietitian), you agree to the following terms.</p>
+
+              <div>
+                <p className="font-medium text-sage-800 mb-1">Scope of Practice</p>
+                <p>Advice provided is intended to support health and wellbeing through evidence-based nutrition and lifestyle guidance. Services are designed to complement, not replace, the care of your GP or other healthcare professionals.</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-sage-800 mb-1">Booking and Payment</p>
+                <p>All bookings are subject to availability and confirmation. Payment for paid consultations is required at the time of booking at the prices stated on the website.</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-sage-800 mb-1">Cancellation and Refunds</p>
+                <p>Cancellations more than 48 hours before your appointment are eligible for a full refund. Cancellations within 48 hours are non-refundable. Rescheduling is permitted with sufficient notice, subject to availability.</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-sage-800 mb-1">Client Responsibilities</p>
+                <p>You agree to provide accurate and up-to-date information about your medical history, medications, and health concerns, and to inform Prachi of any significant changes to your health. Children under 16 must be accompanied by a parent or legal guardian.</p>
+              </div>
+
+              <div>
+                <p className="font-medium text-sage-800 mb-1">Confidentiality and Data</p>
+                <p>All personal and health information is treated confidentially in accordance with UK GDPR and professional standards. Data will only be shared with your consent, as required by law, or where necessary to deliver the service.</p>
+              </div>
+
+              <p>
+                Read the full{' '}
+                <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-sage-500 underline hover:text-sage-700">
+                  Terms &amp; Conditions
+                </a>{' '}
+                and{' '}
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sage-500 underline hover:text-sage-700">
+                  Privacy Policy
+                </a>.
+              </p>
+            </div>
+
+            {/* Actions */}
+            <div className="px-6 py-4 border-t border-sage-100 flex gap-3 justify-end flex-shrink-0">
+              <button
+                onClick={() => setShowTerms(false)}
+                className="btn-outline py-2.5 px-5 text-sm"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => { setShowTerms(false); handleSubmit(); }}
+                className="btn-primary py-2.5 px-6 text-sm"
+              >
+                I Agree and Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -14,7 +14,7 @@ function getTransporter() {
 }
 
 const siteUrl    = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-const adminEmail = process.env.ADMIN_EMAIL          || 'prachi@dietitianprachi.co.uk';
+const adminEmail = process.env.ADMIN_EMAIL          || 'prachi@dietitianprachi.com';
 
 function baseStyle() {
   return `font-family:Georgia,serif;max-width:580px;margin:0 auto;background:#ffffff;border:1px solid #cce6c5;border-radius:8px;overflow:hidden;`;

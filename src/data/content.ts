@@ -32,7 +32,7 @@ export const services = [
       'Identification of key nutritional priorities and contributing factors',
       'Personalised nutrition and lifestyle plan',
       'Plan review call (10–15 minutes)',
-      'One email check-in within one week',
+      'One email check-in',
     ],
     conditions: [
       'Type 2 diabetes & insulin resistance (metabolic health)',
@@ -75,8 +75,8 @@ export const services = [
       'Symptom and nutritional risk assessment',
       'Personalised cancer nutrition and lifestyle plan',
       'Strategies for managing treatment side effects',
-      'Follow-up review call (10–15 minutes)',
-      'One email check-in within one week',
+      'Plan review call (10–15 minutes)',
+      'One email check-in',
     ],
   },
   {
@@ -91,7 +91,7 @@ export const services = [
       'Ongoing specialist support to monitor nutrition status, manage symptoms, and adjust your plan throughout treatment and recovery.',
     features: [
       'Monitor nutrition status during treatment or recovery',
-      'Manage ongoing symptoms and side effects',
+      'Help manage ongoing symptoms and side effects',
       'Adjust nutrition and lifestyle strategies as needed',
       'Provide ongoing reassurance and clinical guidance',
       'Support quality of life and wellbeing',
