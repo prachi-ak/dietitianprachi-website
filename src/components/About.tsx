@@ -1,46 +1,116 @@
 import Image from 'next/image';
 
+const blueprintPillars = [
+  {
+    title: 'Balanced Nutrition',
+    desc:  'Nourishing your body with evidence-based nutrition tailored to your health needs, lifestyle and goals.',
+  },
+  {
+    title: 'Restorative Sleep',
+    desc:  'Supporting quality sleep to improve energy, recovery, hormone balance and overall wellbeing.',
+  },
+  {
+    title: 'Exercise & Movement',
+    desc:  'Building realistic and enjoyable movement habits that support strength, mobility, metabolic health and long-term vitality.',
+  },
+  {
+    title: 'Stress & Emotional Wellbeing',
+    desc:  'Understanding how stress, emotions and daily pressures affect your health, and developing strategies to support resilience and balance.',
+  },
+  {
+    title: 'Sustainable Behaviour Change (Foundation)',
+    desc:  'Creating practical habits, building consistency and making meaningful lifestyle changes that support long-term success.',
+  },
+];
+
+const conditions = [
+  {
+    category: 'Metabolic Health',
+    items: ['Diabetes & Prediabetes', 'Insulin Resistance', 'Cardiovascular Health', 'High Blood Pressure', 'Thyroid Dysfunction'],
+  },
+  {
+    category: 'Digestive Health',
+    items: ['IBS', 'Reflux (GERD)', 'Bloating', 'Constipation', 'Diarrhoea'],
+  },
+  {
+    category: "Women's Health",
+    items: ['PCOS', 'Perimenopause', 'Menopause', 'Hormonal Health'],
+  },
+  { category: 'Weight Management',                      items: [] },
+  { category: 'Cancer Nutrition & Lifestyle Support',   items: [] },
+  { category: 'Autoimmune & Inflammatory Conditions',   items: [] },
+  { category: 'Chronic Disease Management',             items: [] },
+];
+
+const whyChoose = [
+  'HCPC Registered Dietitian',
+  '12+ Years Clinical Experience',
+  'Evidence-Based Nutrition Advice',
+  'Integrative Lifestyle Approach',
+  'Specialist Oncology Experience',
+  'Personalised One-to-One Care',
+  'South Asian Nutrition & Lifestyle Expertise',
+  'Experience Supporting Clients Across the UK & Internationally',
+];
+
 export default function About() {
   return (
     <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+
+        {/* Top grid: Meet Prachi | Approach + Blueprint */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Left: bio */}
+          {/* Left: Meet Prachi */}
           <div>
             <p className="section-label">About</p>
-            <h2 className="section-heading text-4xl mb-2">
-              Evidence-Based Nutrition with an Integrative Lifestyle Approach
-            </h2>
+            <h2 className="section-heading text-4xl mb-1">Prachi Acharekar</h2>
+            <p className="font-sans text-sage-600 text-base mb-0.5">HCPC Registered Dietitian</p>
+            <p className="font-sans text-sage-500 text-sm mb-6">12+ Years Clinical Experience &nbsp;|&nbsp; Founder, The Integrative Dietitian</p>
+
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
-              I am Prachi. My work combines evidence-based nutrition with a personalised,
-              root-cause-informed approach to support long-term health outcomes.
+              I am an HCPC Registered Dietitian with over 12 years of experience in clinical
+              nutrition and integrative lifestyle medicine approaches, supporting individuals across
+              a wide range of health conditions including metabolic health, gut health concerns,
+              women's health, weight management, oncology (cancer) and chronic health conditions.
             </p>
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
-              I specialise in metabolic health, gut health, PCOS and women's health, weight
-              management, autoimmune conditions, oncology nutrition, and chronic disease
-              management, including diabetes, hypertension, cardiovascular health, thyroid
-              dysfunction, and insulin resistance.
+              My approach combines evidence-based nutrition with practical lifestyle strategies,
+              recognising that health is influenced by much more than food alone. Sleep, movement,
+              stress, emotional wellbeing and daily habits all play an important role in achieving
+              lasting health outcomes.
+            </p>
+            <p className="font-sans text-sage-700 text-base leading-relaxed mb-8">
+              Through The Integrative Dietitian, my goal is to help individuals make sustainable
+              changes that fit their lifestyle and support long-term wellbeing.
+            </p>
+
+            <h3 className="font-serif text-xl text-sage-800 mb-4">
+              Clinical Experience &amp; Global Reach
+            </h3>
+            <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
+              Throughout my career, I have worked across clinical nutrition, oncology care,
+              metabolic health and integrative healthcare settings.
             </p>
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
-              I have worked across hospital, clinical, and private healthcare settings, supporting
-              individuals with complex and long-term conditions through personalised nutrition and
-              lifestyle interventions. In a previous senior clinical role within an integrative
-              healthcare setting, I managed a global caseload across the UK, US, Canada, Europe,
-              UAE, Singapore, and India, leading the oncology nutrition and lifestyle vertical and
-              supporting individuals through treatment, recovery, and survivorship as part of a
-              multidisciplinary team.
+              In a previous senior clinical role, I managed a global caseload through remote
+              consultations and lifestyle coaching, supporting individuals across the UK, US, Canada,
+              Europe, UAE, Singapore and India.
+            </p>
+            <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
+              I also led the oncology nutrition and lifestyle service, supporting individuals through
+              cancer treatment, recovery and long-term wellbeing as part of a multidisciplinary
+              approach.
             </p>
             <p className="font-sans text-sage-700 text-base leading-relaxed">
-              Having worked extensively with South Asian and international populations, I
-              understand the importance of culturally relevant, realistic guidance that fits into
-              everyday life. My aim is to help individuals feel informed, supported, and empowered
-              to make sustainable changes that improve both their health and quality of life.
+              Working with clients from diverse cultural backgrounds has strengthened my ability to
+              provide personalised, practical and culturally relevant nutrition support that fits
+              real life, rather than restrictive diets or one-size-fits-all plans.
             </p>
 
             <div className="mt-8 pt-6 border-t border-sage-100">
               <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">
-                Registered & Accredited With
+                Registered &amp; Accredited With
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <Image src="/hcpc-logo.png"            alt="HCPC Health and Care Professions Council" width={100} height={40} className="h-9 w-auto object-contain" />
@@ -50,7 +120,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: approach + blueprint */}
+          {/* Right: Approach + Blueprint */}
           <div>
             <h3 className="font-serif text-2xl text-sage-800 leading-snug mb-5">
               Your Lifestyle Is the Blueprint of Your Health
@@ -62,9 +132,8 @@ export default function About() {
               As The Integrative Dietitian, I take a whole-person approach, exploring how these
               factors interact to influence your health and wellbeing. Together, we identify the key
               drivers affecting your symptoms and develop personalised, sustainable strategies that
-              support lasting change.
-              Because lasting health is not built on food alone, but shaped by the way we live every
-              day.
+              support lasting change. Because lasting health is not built on food alone, but shaped
+              by the way we live every day.
             </p>
 
             <h3 className="font-serif text-xl text-sage-800 mb-3">
@@ -77,18 +146,82 @@ export default function About() {
               a personalised and sustainable approach that supports long-term wellbeing.
             </p>
 
+            <ul className="space-y-4 mb-6">
+              {blueprintPillars.map((p) => (
+                <li key={p.title}>
+                  <p className="font-serif text-sage-800 text-base mb-1">{p.title}</p>
+                  <p className="font-sans text-sage-600 text-base leading-relaxed">{p.desc}</p>
+                </li>
+              ))}
+            </ul>
+
+            <p className="font-sans text-sage-700 text-base leading-relaxed mb-6 border-l-2 border-sage-300 pl-4 italic">
+              When nutrition, exercise and movement, sleep and emotional wellbeing work together,
+              and are supported by sustainable behaviour change, they create the foundation for
+              better health, improved wellbeing and lasting results.
+            </p>
+
             <div className="rounded-xl overflow-hidden border border-sage-100">
               <Image
                 src="/health-blueprint.png"
-                alt="The Integrative Health Blueprint: Nutrition, Exercise and Movement, Sleep, Stress and Emotional Wellbeing"
+                alt="The Integrative Health Blueprint"
                 width={600}
                 height={600}
                 className="w-full h-auto object-contain"
               />
             </div>
           </div>
-
         </div>
+
+        {/* Conditions I Support */}
+        <div className="mt-20 pt-16 border-t border-sage-100">
+          <div className="text-center mb-12">
+            <p className="section-label">Expertise</p>
+            <h2 className="section-heading text-4xl">Conditions I Support</h2>
+          </div>
+          {/* Detailed categories with sub-items */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+            {conditions.filter((c) => c.items.length > 0).map((c) => (
+              <div key={c.category} className="bg-sage-50 border border-sage-100 rounded-lg p-5">
+                <p className="font-serif text-sage-800 text-base mb-2">{c.category}</p>
+                <ul className="space-y-1">
+                  {c.items.map((item) => (
+                    <li key={item} className="flex items-start gap-1.5 font-sans text-base text-sage-600">
+                      <span className="text-sage-400 flex-shrink-0 mt-1 text-xs">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Standalone categories as compact tags */}
+          <div className="flex flex-wrap gap-3">
+            {conditions.filter((c) => c.items.length === 0).map((c) => (
+              <div key={c.category} className="bg-sage-50 border border-sage-100 rounded-lg px-5 py-3">
+                <p className="font-serif text-sage-800 text-base">{c.category}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Clients Choose to Work With Me */}
+        <div className="mt-16 pt-14 border-t border-sage-100">
+          <div className="text-center mb-10">
+            <p className="section-label">Why Choose</p>
+            <h2 className="section-heading text-4xl">Why Clients Choose to Work With Me</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto">
+            {whyChoose.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <span className="text-sage-500 font-bold flex-shrink-0">✔</span>
+                <span className="font-sans text-sage-700 text-base">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

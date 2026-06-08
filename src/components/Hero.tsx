@@ -15,12 +15,9 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-20 grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="font-serif text-4xl md:text-5xl text-sage-700 mb-5 leading-tight">
-            The Integrative<br className="hidden sm:block" /> Dietitian
-          </h2>
-          <h1 className="font-serif text-5xl md:text-6xl text-sage-900 leading-[1.1] mb-6">
-            Nourish Your Body.<br />
-            <span className="text-sage-500">Elevate Your Life.</span>
+          <h1 className="font-serif text-5xl md:text-6xl text-sage-800 leading-[1.1] mb-6">
+            The Integrative<br />
+            <span className="text-sage-500">Dietitian</span>
           </h1>
           <p className="font-sans text-sage-700 text-base leading-relaxed mb-6 max-w-lg">
             Supporting individuals with metabolic health concerns, digestive health conditions,

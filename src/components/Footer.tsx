@@ -81,16 +81,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-sage-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="font-sans text-xs text-sage-500">
-            &copy; {new Date().getFullYear()} Dietitian Prachi by Prachi Acharekar. All rights reserved.
+        <div className="border-t border-sage-800 pt-6 space-y-3">
+          <p className="font-sans text-xs text-sage-400 text-center">
+            Prachi Acharekar &nbsp;&bull;&nbsp; HCPC Registered Dietitian &nbsp;&bull;&nbsp;
+            Online Consultations Across the UK &amp; Internationally (where appropriate) &nbsp;&bull;&nbsp;
+            Face-to-Face Consultations in Selected London Locations
           </p>
-          <div className="flex items-center gap-4 font-sans text-xs text-sage-500">
-            <Link href="/terms"   className="hover:text-sage-300 transition-colors">Terms & Conditions</Link>
-            <span>&bull;</span>
-            <Link href="/privacy" className="hover:text-sage-300 transition-colors">Privacy Policy</Link>
-            <span>&bull;</span>
-            <span>Online worldwide &bull; In-person in London</span>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="font-sans text-xs text-sage-500">
+              &copy; {new Date().getFullYear()} Prachi Acharekar trading as The Integrative Dietitian. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4 font-sans text-xs text-sage-500">
+              <Link href="/terms"   className="hover:text-sage-300 transition-colors">Terms &amp; Conditions</Link>
+              <span>&bull;</span>
+              <Link href="/privacy" className="hover:text-sage-300 transition-colors">Privacy Policy</Link>
+            </div>
           </div>
         </div>
       </div>
