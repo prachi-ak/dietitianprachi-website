@@ -1,24 +1,5 @@
 import Image from 'next/image';
 
-const pillars = [
-  {
-    label: 'Balanced Nutrition',
-    desc:  'Food as information for the body: personalised, practical, and sustainable.',
-  },
-  {
-    label: 'Sustainable Exercise & Movement',
-    desc:  'Movement that supports long-term physical and metabolic health.',
-  },
-  {
-    label: 'Restorative Sleep',
-    desc:  'The foundation of hormonal balance, recovery, and daily resilience.',
-  },
-  {
-    label: 'Stress & Emotional Wellbeing',
-    desc:  'Addressing the mind-body connection for lasting lifestyle change.',
-  },
-];
-
 export default function About() {
   return (
     <section id="about" className="py-24 bg-white">
@@ -31,15 +12,9 @@ export default function About() {
             <h2 className="section-heading text-4xl mb-2">
               Evidence-Based Nutrition with an Integrative Lifestyle Approach
             </h2>
-            <p className="font-sans text-sage-400 text-base italic mb-6">
-              Your lifestyle is the blueprint of your health.
-            </p>
-
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
-              I am Prachi, an HCPC-registered dietitian with over 12 years of experience in
-              clinical nutrition, metabolic health, and integrative lifestyle medicine. My work
-              combines evidence-based nutrition with a personalised, root-cause-informed approach
-              to support long-term health outcomes.
+              I am Prachi. My work combines evidence-based nutrition with a personalised,
+              root-cause-informed approach to support long-term health outcomes.
             </p>
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
               I specialise in metabolic health, gut health, PCOS and women's health, weight
@@ -63,18 +38,6 @@ export default function About() {
               to make sustainable changes that improve both their health and quality of life.
             </p>
 
-            <div className="mt-8 flex flex-col gap-2 font-sans text-base text-sage-600">
-              {[
-                '12+ years in clinical nutrition and integrative lifestyle medicine',
-                'Specialist in oncology, metabolic, and chronic disease nutrition',
-              ].map((item) => (
-                <span key={item} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" />
-                  {item}
-                </span>
-              ))}
-            </div>
-
             <div className="mt-8 pt-6 border-t border-sage-100">
               <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">
                 Registered & Accredited With
@@ -87,30 +50,41 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: approach + four pillars */}
+          {/* Right: approach + blueprint */}
           <div>
-            <p className="section-label mb-4">My Approach</p>
+            <h3 className="font-serif text-2xl text-sage-800 leading-snug mb-5">
+              Your Lifestyle Is the Blueprint of Your Health
+            </h3>
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-8">
-              My approach goes beyond prescribing meal plans. I focus on identifying the
-              underlying factors driving health conditions rather than solely managing symptoms.
-              I integrate nutrition, movement, sleep, stress management, and emotional wellbeing
-              into a strategy that is realistic and tailored to each individual's medical history,
-              lifestyle, and cultural preferences.
+              Many health concerns are influenced by more than nutrition alone.
+              Sleep quality, exercise and movement, stress levels, emotional wellbeing and daily
+              habits all play a significant role in how we feel and function.
+              As The Integrative Dietitian, I take a whole-person approach, exploring how these
+              factors interact to influence your health and wellbeing. Together, we identify the key
+              drivers affecting your symptoms and develop personalised, sustainable strategies that
+              support lasting change.
+              Because lasting health is not built on food alone, but shaped by the way we live every
+              day.
             </p>
 
-            <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">
-              The Four Pillars of Health
+            <h3 className="font-serif text-xl text-sage-800 mb-3">
+              The Integrative Health Blueprint
+            </h3>
+            <p className="font-sans text-sage-700 text-base leading-relaxed mb-6">
+              The Integrative Health Blueprint is the framework that guides the way I work with
+              clients. It recognises that lasting health is influenced by multiple interconnected
+              factors and not nutrition alone. By addressing these key areas together, we can create
+              a personalised and sustainable approach that supports long-term wellbeing.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              {pillars.map((p, i) => (
-                <div
-                  key={i}
-                  className="bg-sage-50 border border-sage-100 rounded-lg p-5 hover:border-sage-300 transition-colors"
-                >
-                  <p className="font-serif text-sage-800 text-base mb-2">{p.label}</p>
-                  <p className="font-sans text-sage-600 text-sm leading-relaxed">{p.desc}</p>
-                </div>
-              ))}
+
+            <div className="rounded-xl overflow-hidden border border-sage-100">
+              <Image
+                src="/health-blueprint.png"
+                alt="The Integrative Health Blueprint: Nutrition, Exercise and Movement, Sleep, Stress and Emotional Wellbeing"
+                width={600}
+                height={600}
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
 

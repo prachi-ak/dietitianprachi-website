@@ -15,7 +15,6 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-20 grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p className="section-label">Prachi Acharekar · HCPC Registered Dietitian</p>
           <h2 className="font-serif text-4xl md:text-5xl text-sage-700 mb-5 leading-tight">
             The Integrative<br className="hidden sm:block" /> Dietitian
           </h2>
@@ -23,10 +22,24 @@ export default function Hero() {
             Nourish Your Body.<br />
             <span className="text-sage-500">Elevate Your Life.</span>
           </h1>
-          <p className="font-sans text-sage-700 text-lg leading-relaxed mb-10 max-w-md">
-            Deeply personalised nutrition programmes built on evidence, delivered
-            with care. Online worldwide and in-person in the United Kingdom.
+          <p className="font-sans text-sage-700 text-base leading-relaxed mb-6 max-w-lg">
+            Supporting individuals with metabolic health concerns, digestive health conditions,
+            PCOS, menopause, weight management, cancer recovery and chronic health
+            conditions through personalised nutrition and lifestyle strategies that fit real life.
           </p>
+          <ul className="flex flex-col gap-2 mb-10">
+            {[
+              'HCPC Registered Dietitian',
+              '12+ Years Clinical Experience',
+              'Online Consultations Across the UK & Internationally (where appropriate)',
+              'Face-to-Face Consultations in Selected London Locations',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2 font-sans text-sm text-sage-700">
+                <span className="text-sage-500 font-bold flex-shrink-0">✔</span>
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="flex flex-wrap gap-4">
             <Link href="/book" className="btn-primary">
               Book a Consultation

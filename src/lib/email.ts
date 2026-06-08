@@ -33,6 +33,32 @@ function footer() {
   </div>`;
 }
 
+const INTAKE_FORMS: Record<string, string> = {
+  'general-initial':  'https://forms.gle/WS8941vh5RcSZx3ZA',
+  'oncology-initial': 'https://forms.gle/9P5wz1Pzg76CeTFX7',
+};
+
+function intakeFormBlock(serviceId: string) {
+  const formUrl = INTAKE_FORMS[serviceId];
+  if (!formUrl) return '';
+  return `
+    <div style="background:#f4f9f1;border:2px solid #a8d0a0;border-radius:6px;padding:20px 24px;margin:24px 0;">
+      <p style="margin:0 0 6px;font-family:system-ui,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#7cb97a;">Action Required: Intake Form</p>
+      <p style="margin:0 0 10px;font-family:system-ui,sans-serif;font-size:14px;color:#2c3e2d;line-height:1.7;">
+        To make the most of your consultation, please complete the intake form before your appointment.
+        This allows Prachi to review your information in advance so that your session can focus entirely
+        on your health, goals, and next steps.
+      </p>
+      <p style="margin:0 0 14px;font-family:system-ui,sans-serif;font-size:13px;color:#5a6b5b;line-height:1.6;">
+        <strong>Please aim to submit the form at least 48 hours before your appointment.</strong>
+      </p>
+      <a href="${formUrl}"
+         style="display:inline-block;background:#768c62;color:#ffffff;padding:11px 24px;text-decoration:none;border-radius:4px;font-size:13px;font-family:system-ui,sans-serif;font-weight:600;">
+        Complete Intake Form
+      </a>
+    </div>`;
+}
+
 function meetBlock(meetUrl: string) {
   if (!meetUrl) return '';
   return `
@@ -80,8 +106,10 @@ export async function sendClientReceiptEmail(booking: Booking, meetUrl: string) 
 
       ${meetBlock(meetUrl)}
 
+      ${intakeFormBlock(booking.serviceId)}
+
       <p style="color:#5a6b5b;font-size:14px;line-height:1.7;margin:0 0 10px;">
-        To prepare, it helps to keep a note of what you eat and drink in the two to three days before
+        To prepare, it also helps to keep a note of what you eat and drink in the two to three days before
         your consultation, and to bring any recent blood test results if you have them.
       </p>
       <p style="color:#5a6b5b;font-size:14px;line-height:1.7;margin:0;">
