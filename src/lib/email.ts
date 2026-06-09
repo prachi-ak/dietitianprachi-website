@@ -22,14 +22,14 @@ function baseStyle() {
 
 function header() {
   return `<div style="background:#a8d0a0;padding:28px 32px;">
-    <p style="margin:0;color:#254325;font-size:22px;letter-spacing:0.5px;">Dietitian Prachi</p>
+    <p style="margin:0;color:#254325;font-size:22px;letter-spacing:0.5px;">The Integrative Dietitian</p>
     <p style="margin:4px 0 0;color:#376537;font-size:13px;">Prachi Acharekar, HCPC Registered Dietitian</p>
   </div>`;
 }
 
 function footer() {
   return `<div style="padding:20px 32px;background:#f4f9f1;border-top:1px solid #cce6c5;">
-    <p style="margin:0;color:#5a6b5b;font-size:12px;">Dietitian Prachi by Prachi Acharekar &bull; HCPC No. DT035388 &bull; BDA No. 1031144</p>
+    <p style="margin:0;color:#5a6b5b;font-size:12px;">The Integrative Dietitian &bull; Prachi Acharekar, HCPC Registered Dietitian</p>
   </div>`;
 }
 
@@ -119,14 +119,14 @@ export async function sendClientReceiptEmail(booking: Booking, meetUrl: string) 
       <p style="color:#2c3e2d;font-size:14px;margin-top:28px;">
         Warm regards,<br/>
         <strong>Prachi Acharekar</strong><br/>
-        HCPC Registered Dietitian, Dietitian Prachi
+        HCPC Registered Dietitian, The Integrative Dietitian
       </p>
     </div>
     ${footer()}
   </div>`;
 
   await getTransporter().sendMail({
-    from:    `"Prachi Acharekar - Dietitian Prachi" <${process.env.SMTP_USER}>`,
+    from:    `"Prachi Acharekar - The Integrative Dietitian" <${process.env.SMTP_USER}>`,
     to:      booking.clientEmail,
     subject: `Confirmed: ${booking.serviceName} on ${booking.date} at ${booking.time}`,
     html,
@@ -164,7 +164,7 @@ export async function sendAdminNotificationEmail(booking: Booking, meetUrl: stri
   </div>`;
 
   await getTransporter().sendMail({
-    from:    `"Dietitian Prachi Bookings" <${process.env.SMTP_USER}>`,
+    from:    `"The Integrative Dietitian Bookings" <${process.env.SMTP_USER}>`,
     to:      adminEmail,
     subject: `New booking: ${booking.clientName} - ${booking.serviceName} on ${booking.date}`,
     html,

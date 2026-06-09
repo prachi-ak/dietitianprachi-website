@@ -1,45 +1,37 @@
 const steps = [
   {
     number: '01',
-    title:  'Comprehensive Assessment',
-    desc:   'We explore your health history, symptoms, nutrition, lifestyle and personal goals in depth.',
+    title:  'Choose Your Service',
+    desc:   'Select the programme that matches your current needs, from a free introductory call to a full initial assessment.',
   },
   {
     number: '02',
-    title:  'Identify Key Drivers',
-    desc:   'Together we explore the underlying factors and lifestyle influences contributing to your current health concerns.',
+    title:  'Select a Date and Time',
+    desc:   'Pick a time that works for you. All consultations are available online via video call, or in-person if you are based in the UK.',
   },
   {
     number: '03',
-    title:  'Personalised Nutrition & Lifestyle Plan',
-    desc:   'Receive a tailored plan built around your needs, preferences and lifestyle.',
-  },
-  {
-    number: '04',
-    title:  'Plan Review & Next Steps',
-    desc:   'We review your personalised plan and provide guidance to help you confidently implement your recommendations. An email check-in is included to support you as you get started.',
+    title:  'Secure Your Booking',
+    desc:   'Complete your details and, where applicable, pay securely via Stripe. You will receive a confirmation once Prachi approves your booking.',
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-white border-t border-sage-100">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
-          <p className="section-label">The Process</p>
-          <h2 className="section-heading text-4xl mb-4">Your Consultation Journey</h2>
+          <h2 className="section-heading text-4xl mb-4">How It Works</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-3 gap-10">
           {steps.map((step) => (
-            <div key={step.number} className="flex gap-6 items-start">
-              <span className="font-serif text-5xl text-sage-200 leading-none select-none flex-shrink-0">
+            <div key={step.number} className="flex flex-col items-start">
+              <span className="font-serif text-5xl text-sage-200 leading-none mb-4 select-none">
                 {step.number}
               </span>
-              <div>
-                <p className="font-serif text-sage-800 text-xl mb-2">{step.title}</p>
-                <p className="font-sans text-sage-600 text-base leading-relaxed">{step.desc}</p>
-              </div>
+              <p className="font-serif text-sage-800 text-lg mb-3">{step.title}</p>
+              <p className="font-sans text-sage-600 text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

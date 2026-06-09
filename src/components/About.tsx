@@ -7,14 +7,14 @@ const blueprintPillars = [
     desc:  'Nourishing your body with evidence-based nutrition tailored to your health needs, lifestyle and goals.',
   },
   {
-    icon:  '/icons/sleep.png',
-    title: 'Restorative Sleep',
-    desc:  'Supporting quality sleep to improve energy, recovery, hormone balance and overall wellbeing.',
-  },
-  {
     icon:  '/icons/exercise.png',
     title: 'Exercise & Movement',
     desc:  'Building realistic and enjoyable movement habits that support strength, mobility, metabolic health and long-term vitality.',
+  },
+  {
+    icon:  '/icons/sleep.png',
+    title: 'Restorative Sleep',
+    desc:  'Supporting quality sleep to improve energy, recovery, hormone balance and overall wellbeing.',
   },
   {
     icon:  '/icons/wellbeing.png',
@@ -198,7 +198,6 @@ export default function About() {
         {/* ── Conditions I Support ── */}
         <div className="mt-24 pt-16 border-t border-sage-100">
           <div className="text-center mb-12">
-            <p className="section-label">Expertise</p>
             <h2 className="section-heading text-4xl">Conditions I Support</h2>
           </div>
 
@@ -232,7 +231,6 @@ export default function About() {
         {/* ── Why Clients Choose to Work With Me ── */}
         <div className="mt-20 pt-16 border-t border-sage-100">
           <div className="text-center mb-10">
-            <p className="section-label">Why Choose</p>
             <h2 className="section-heading text-4xl">Why Clients Choose to Work With Me</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto">

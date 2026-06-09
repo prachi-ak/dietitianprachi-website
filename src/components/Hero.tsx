@@ -22,7 +22,7 @@ export default function Hero() {
             <span className="text-sage-500">Dietitian</span>
           </h1>
 
-          <p className="font-serif text-xl md:text-2xl text-sage-600 italic mb-7 leading-snug">
+          <p className="font-serif text-xl md:text-2xl text-sage-600 italic mb-7 leading-snug max-w-lg text-left">
             Evidence-Based Nutrition &amp; Lifestyle Support for Lasting Health
           </p>
 
