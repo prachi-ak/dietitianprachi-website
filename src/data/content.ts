@@ -146,7 +146,7 @@ export const blogs = [
   {
     slug: 'four-pillars-of-health',
     title: 'The 4 Pillars of Health: Why Nutrition Alone Is Not Enough',
-    date: '15 May 2025',
+    date: '30 May 2026',
     readTime: '5 min read',
     excerpt:
       'While food plays a vital role in wellbeing, health is rarely shaped by nutrition alone. Sleep, movement, stress, and emotional wellbeing all interact to influence energy, hormones, immunity, and long-term disease risk.',
@@ -184,7 +184,7 @@ export const blogs = [
 export const testimonials = [
   {
     quote:
-      "Prachi's approach was supportive, knowledgeable, and highly personalised. She took the time to listen carefully and provided practical, realistic strategies tailored to our needs. Her guidance around nutrition, lifestyle, and long-term health felt both evidence-based and holistic. Since working with her, we have seen significant improvements in our health, including improvements in blood sugar levels, blood pressure and overall wellbeing.",
+      "Prachi's approach was supportive, knowledgeable, and highly personalised. She took the time to listen carefully and provided practical, realistic strategies tailored to my needs. Her guidance around nutrition, lifestyle, and long-term health felt both evidence-based and holistic. Since working with her, I have seen significant improvements in my health, including improvements in blood sugar levels, blood pressure and overall wellbeing.",
     client: 'Metabolic health client',
   },
   {

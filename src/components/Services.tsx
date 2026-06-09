@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { services } from '@/data/content';
 import { Clock, CheckCircle2, Info } from 'lucide-react';
 
@@ -17,8 +18,8 @@ export default function Services() {
           <p className="section-label">Services</p>
           <h2 className="section-heading text-4xl mb-4">How We Work Together</h2>
           <p className="font-sans text-sage-600 max-w-xl mx-auto text-base leading-relaxed">
-            All consultations are available online across the UK and internationally.
-            In-person appointments are available within the UK.
+            Online Consultations Across the UK &amp; Internationally (where appropriate).
+            Face-to-Face Consultations in Selected London Locations.
           </p>
         </div>
 
@@ -46,6 +47,17 @@ export default function Services() {
             </Link>
           </div>
         )}
+
+        {/* Lifestyle visual break */}
+        <div className="rounded-2xl overflow-hidden mb-14 shadow-sm">
+          <Image
+            src="/lifestyle-pic.png"
+            alt="Personalised nutrition and lifestyle support"
+            width={1200}
+            height={500}
+            className="w-full h-56 md:h-72 object-cover object-center"
+          />
+        </div>
 
         {/* Paid service groups */}
         <div className="space-y-16">

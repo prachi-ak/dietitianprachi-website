@@ -47,9 +47,8 @@ export default function PrivacyPage() {
       <Navbar />
       <main className="pt-36 pb-24 bg-white min-h-screen">
         <div className="max-w-2xl mx-auto px-6">
-          <p className="section-label">Legal</p>
           <h1 className="font-serif text-4xl text-sage-900 mb-2">Privacy Policy</h1>
-          <p className="font-sans text-sage-500 text-sm mb-12">Last updated: June 2025</p>
+          <p className="font-sans text-sage-500 text-sm mb-12">Last updated: June 2026</p>
 
           <div className="space-y-10">
             {sections.map((s, i) => (

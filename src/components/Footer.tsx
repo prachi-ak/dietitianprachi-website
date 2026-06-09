@@ -8,15 +8,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <Image
-              src="/logo.png"
-              alt="Prachi — The Integrative Dietitian"
-              width={110}
-              height={55}
-              className="h-14 w-auto object-contain mb-3 brightness-0 invert"
-            />
+            <div className="inline-block bg-white/95 rounded-xl px-3 py-2 mb-3">
+              <Image
+                src="/logo.png"
+                alt="Prachi — The Integrative Dietitian"
+                width={130}
+                height={65}
+                className="h-14 w-auto object-contain"
+              />
+            </div>
             <p className="font-sans text-sage-300 text-sm leading-relaxed">
-              Evidence-based, personalised nutrition care by Prachi Acharekar,
+              Evidence-based, personalised nutrition and lifestyle care by Prachi Acharekar,
               HCPC Registered Dietitian.
             </p>
             <p className="font-sans text-sage-400 text-xs mt-3">
