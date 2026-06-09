@@ -63,7 +63,8 @@ export default function Hero() {
                 src="/website-pic2.jpg"
                 alt="Prachi Acharekar, The Integrative Dietitian"
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: '52% 20%' }}
                 priority
               />
             </div>

@@ -22,7 +22,7 @@ export const services = [
     groupLabel: 'Personalised Nutrition & Lifestyle Support',
     name: 'Initial Consultation',
     duration: '60 minutes',
-    price: 120,
+    price: 2,
     currency: 'GBP',
     description:
       'A comprehensive assessment of your medical history, diet, and lifestyle, resulting in a fully personalised nutrition and lifestyle plan.',
@@ -49,7 +49,7 @@ export const services = [
     groupLabel: 'Personalised Nutrition & Lifestyle Support',
     name: 'Follow-Up Consultation',
     duration: '30 minutes',
-    price: 60,
+    price: 1,
     currency: 'GBP',
     description:
       'A structured review to assess progress, refine your plan, and provide ongoing support for long-term results.',
@@ -66,7 +66,7 @@ export const services = [
     groupLabel: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support',
     name: 'Initial Consultation',
     duration: '75 minutes',
-    price: 150,
+    price: 4,
     currency: 'GBP',
     description:
       'A specialist assessment providing evidence-based nutritional and lifestyle care for individuals undergoing cancer treatment, recovery, or survivorship.',
@@ -85,7 +85,7 @@ export const services = [
     groupLabel: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support',
     name: 'Follow-Up Consultation',
     duration: '45 minutes',
-    price: 90,
+    price: 3,
     currency: 'GBP',
     description:
       'Ongoing specialist support to monitor nutrition status, manage symptoms, and adjust your plan throughout treatment and recovery.',
