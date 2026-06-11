@@ -69,7 +69,7 @@ export default function About() {
           {/* ── Left: Meet Prachi ── */}
           <div>
             <p className="section-label">About</p>
-            <h2 className="section-heading text-4xl mb-1">Prachi Acharekar</h2>
+            <h2 className="section-heading text-4xl mb-1 text-left">Prachi Acharekar</h2>
             <p className="font-sans text-sage-600 text-base mb-1">HCPC Registered Dietitian</p>
             <p className="font-sans text-sage-500 text-sm mb-8">
               12+ Years Clinical Experience&nbsp;&nbsp;|&nbsp;&nbsp;Founder, The Integrative Dietitian
@@ -81,7 +81,7 @@ export default function About() {
                 alt="Prachi Acharekar"
                 width={600}
                 height={800}
-                className="w-full h-72 md:h-auto object-cover object-top"
+                className="w-full h-auto object-cover object-top"
               />
             </div>
 
@@ -127,7 +127,7 @@ export default function About() {
 
             <div className="mt-10 pt-6 border-t border-sage-100">
               <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">
-                Registered &amp; Accredited With
+                Registered With
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <Image src="/hcpc-logo.png"            alt="HCPC Health and Care Professions Council" width={100} height={40} className="h-9 w-auto object-contain" />
