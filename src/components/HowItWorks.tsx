@@ -2,12 +2,12 @@ const steps = [
   {
     number: '01',
     title:  'Choose Your Service',
-    desc:   'Select the programme that matches your current needs, from a free introductory call to a full initial assessment.',
+    desc:   'Select the programme that matches your current needs, from a free introductory call to a full initial consultation.',
   },
   {
     number: '02',
     title:  'Select a Date and Time',
-    desc:   'Pick a time that works for you. All consultations are available online via video call, or in-person if you are based in the UK.',
+    desc:   'Pick a time that works for you. All consultations are available online via video call, or in-person at selected locations in London',
   },
   {
     number: '03',
