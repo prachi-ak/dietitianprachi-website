@@ -18,13 +18,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-white border-t border-sage-100">
+    <section className="py-16 md:py-24 bg-white border-t border-sage-100">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="section-heading text-4xl mb-4">How It Works</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10">
           {steps.map((step) => (
             <div key={step.number} className="flex flex-col items-start">
               <span className="font-serif text-5xl text-sage-200 leading-none mb-4 select-none">

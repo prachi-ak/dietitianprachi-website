@@ -13,16 +13,16 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-20 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 pt-24 md:pt-36 pb-12 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
         <div>
-          <p className="section-label mb-4">Prachi Acharekar · HCPC Registered Dietitian</p>
+          <p className="section-label mb-4 text-center md:text-left">Prachi Acharekar · HCPC Registered Dietitian</p>
 
-          <h1 className="font-serif text-5xl md:text-6xl text-sage-800 leading-[1.1] mb-3">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-sage-800 leading-[1.1] mb-3">
             The Integrative<br />
             <span className="text-sage-500">Dietitian</span>
           </h1>
 
-          <p className="font-serif text-xl md:text-2xl text-sage-600 italic mb-7 leading-snug max-w-lg text-left">
+          <p className="font-serif text-xl md:text-2xl text-sage-600 italic mb-7 leading-snug max-w-lg text-center md:text-left">
             Evidence-Based Nutrition &amp; Lifestyle Support for Lasting Health
           </p>
 
@@ -46,7 +46,7 @@ export default function Hero() {
             ))}
           </ul>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <Link href="/book" className="btn-primary">
               Book a Consultation
             </Link>
@@ -56,15 +56,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:flex justify-center">
-          <div className="relative">
-            <div className="w-72 h-[460px] rounded-3xl overflow-hidden border border-sage-200 shadow-lg">
+        <div className="flex justify-center">
+          <div className="relative -translate-x-4 md:translate-x-0">
+            <div className="w-56 h-[360px] md:w-72 md:h-[460px] rounded-3xl overflow-hidden border border-sage-200 shadow-lg">
               <Image
                 src="/website-pic2.jpg"
                 alt="Prachi Acharekar, The Integrative Dietitian"
                 fill
-                className="object-cover"
-                style={{ objectPosition: '52% 20%' }}
+                className="object-cover [object-position:54%_20%] md:[object-position:52%_20%]"
                 priority
               />
             </div>

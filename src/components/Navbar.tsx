@@ -33,14 +33,14 @@ export default function Navbar() {
         scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-sage-100' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 h-20 md:h-28 flex items-center justify-between">
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
           <Image
             src="/logo.png"
             alt="Prachi — The Integrative Dietitian"
             width={240}
             height={120}
-            className="h-24 w-auto object-contain"
+            className="h-16 md:h-24 w-auto object-contain"
             priority
           />
         </Link>

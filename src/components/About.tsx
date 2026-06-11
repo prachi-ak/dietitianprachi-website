@@ -60,11 +60,11 @@ const whyChoose = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Top grid: Meet Prachi | Approach + Blueprint */}
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
 
           {/* ── Left: Meet Prachi ── */}
           <div>
@@ -81,7 +81,7 @@ export default function About() {
                 alt="Prachi Acharekar"
                 width={600}
                 height={800}
-                className="w-full h-auto object-cover object-top"
+                className="w-full h-72 md:h-auto object-cover object-top"
               />
             </div>
 
@@ -175,7 +175,7 @@ export default function About() {
             </p>
 
             {/* Blueprint pillars with icons */}
-            <div className="grid grid-cols-2 gap-5 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
               {blueprintPillars.map((p) => (
                 <div key={p.title} className="flex gap-3 items-start">
                   <Image src={p.icon} alt={p.title} width={40} height={40} className="w-10 h-10 flex-shrink-0 object-contain" />
@@ -196,8 +196,8 @@ export default function About() {
         </div>
 
         {/* ── Conditions I Support ── */}
-        <div className="mt-24 pt-16 border-t border-sage-100">
-          <div className="text-center mb-12">
+        <div className="mt-16 md:mt-24 pt-12 md:pt-16 border-t border-sage-100">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="section-heading text-4xl">Conditions I Support</h2>
           </div>
 
@@ -229,7 +229,7 @@ export default function About() {
         </div>
 
         {/* ── Why Clients Choose to Work With Me ── */}
-        <div className="mt-20 pt-16 border-t border-sage-100">
+        <div className="mt-14 md:mt-20 pt-12 md:pt-16 border-t border-sage-100">
           <div className="text-center mb-10">
             <h2 className="section-heading text-4xl">Why Clients Choose to Work With Me</h2>
           </div>

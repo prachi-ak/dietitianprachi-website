@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-24 bg-sage-50">
+    <section id="blog" className="py-16 md:py-24 bg-sage-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>

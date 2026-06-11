@@ -4,9 +4,9 @@ import { Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-sage-900 text-white py-14">
+    <footer className="bg-sage-900 text-white py-10 md:py-14">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-10">
           <div>
             <div className="inline-block bg-white/95 rounded-xl px-3 py-2 mb-3">
               <Image

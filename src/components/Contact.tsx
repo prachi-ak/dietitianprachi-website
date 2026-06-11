@@ -2,9 +2,9 @@ import { Mail, Linkedin, Instagram } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-sage-50">
+    <section id="contact" className="py-16 md:py-24 bg-sage-50">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div>
             <p className="section-label">Contact</p>
             <h2 className="section-heading text-4xl mb-6">Get in Touch</h2>

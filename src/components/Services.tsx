@@ -12,9 +12,9 @@ export default function Services() {
   const discoveryCall = services.find((s) => s.group === 'discovery');
 
   return (
-    <section id="services" className="py-24 bg-sage-50">
+    <section id="services" className="py-16 md:py-24 bg-sage-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <p className="section-label">Services</p>
           <h2 className="section-heading text-4xl mb-4">How We Work Together</h2>
           <p className="font-sans text-sage-600 max-w-xl mx-auto text-base leading-relaxed">
@@ -25,7 +25,7 @@ export default function Services() {
 
         {/* Free discovery call */}
         {discoveryCall && (
-          <div className="bg-sage-800 rounded-lg p-8 mb-14 flex flex-col sm:flex-row sm:items-center gap-6">
+          <div className="bg-sage-800 rounded-lg p-6 md:p-8 mb-10 md:mb-14 flex flex-col sm:flex-row sm:items-center gap-6">
             <div className="flex-1">
               <span className="inline-block font-sans text-xs tracking-widest uppercase bg-white/10 text-sage-100 px-3 py-1 rounded-full mb-3">
                 Not sure where to begin?
@@ -49,7 +49,7 @@ export default function Services() {
         )}
 
         {/* Lifestyle visual break */}
-        <div className="rounded-2xl overflow-hidden mb-14 shadow-sm">
+        <div className="rounded-2xl overflow-hidden mb-10 md:mb-14 shadow-sm">
           <Image
             src="/lifestyle-pic.png"
             alt="Personalised nutrition and lifestyle support"
@@ -60,7 +60,7 @@ export default function Services() {
         </div>
 
         {/* Paid service groups */}
-        <div className="space-y-16">
+        <div className="space-y-12 md:space-y-16">
           {paidGroups.map((group) => {
             const groupServices = services.filter((s) => s.group === group.key);
             const initialService = groupServices.find((s) => s.id.endsWith('-initial'));

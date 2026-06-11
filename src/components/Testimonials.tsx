@@ -25,12 +25,12 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-sage-800"
+      className="py-16 md:py-24 bg-sage-800"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <p className="font-sans text-xs uppercase tracking-widest text-sage-300 mb-3">
             Client Stories
           </p>
