@@ -17,7 +17,8 @@ export default function Hero() {
         <div>
           <p className="section-label mb-4 text-center md:text-left">Prachi Acharekar · HCPC Registered Dietitian</p>
 
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-sage-800 leading-[1.1] mb-3">
+          {/* Heading alignment on desktop: md:text-center = centred, md:text-left = left */}
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-sage-800 leading-[1.1] mb-3 md:text-center">
             The Integrative<br />
             <span className="text-sage-500">Dietitian</span>
           </h1>
