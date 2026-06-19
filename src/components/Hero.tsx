@@ -36,7 +36,7 @@ export default function Hero() {
           <ul className="flex flex-col gap-2.5 mb-10">
             {[
               'HCPC Registered Dietitian',
-              '12+ Years Clinical Experience',
+              '14+ Years Clinical Experience',
               'Online Consultations Across the UK & Internationally (where appropriate)',
               'Face-to-Face Consultations in Selected London Locations',
             ].map((item) => (

@@ -49,7 +49,7 @@ const conditions = [
 
 const whyChoose = [
   'HCPC Registered Dietitian',
-  '12+ Years Clinical Experience',
+  '14+ Years Clinical Experience',
   'Evidence-Based Nutrition Advice',
   'Integrative Lifestyle Approach',
   'Specialist Oncology Experience',
@@ -72,7 +72,7 @@ export default function About() {
             <h2 className="section-heading text-4xl mb-1 text-left">Prachi Acharekar</h2>
             <p className="font-sans text-sage-600 text-base mb-1">HCPC Registered Dietitian</p>
             <p className="font-sans text-sage-500 text-sm mb-8">
-              12+ Years Clinical Experience&nbsp;&nbsp;|&nbsp;&nbsp;Founder, The Integrative Dietitian
+              14+ Years Clinical Experience&nbsp;&nbsp;|&nbsp;&nbsp;Founder, The Integrative Dietitian
             </p>
 
             <div className="mb-8 rounded-2xl overflow-hidden border border-sage-100 shadow-sm">

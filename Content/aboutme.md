@@ -3,7 +3,7 @@ Tag line: Evidence-based nutrition with an integrative lifestyle approach
 Hook/ Philosophy to use somewhere : Your lifestyle is the blueprint of your health.
 
 About Me:
-I am Prachi, an HCPC-registered dietitian with over 12 years of experience in clinical
+I am Prachi, an HCPC-registered dietitian with over 14 years of experience in clinical
 nutrition, metabolic health, and integrative lifestyle medicine approaches.
 My work combines evidence-based nutrition with a personalised, root-cause-informed
 approach to support long-term health outcomes. I specialise in metabolic health, gut health,
