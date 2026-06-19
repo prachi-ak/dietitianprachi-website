@@ -86,7 +86,7 @@ export default function About() {
             </div>
 
             <p className="font-sans text-sage-700 text-base leading-relaxed mb-5">
-              I am an HCPC Registered Dietitian with over 12 years of experience in clinical
+              I am an HCPC Registered Dietitian with over 14 years of experience in clinical
               nutrition and integrative lifestyle medicine approaches, supporting individuals across
               a wide range of health conditions including metabolic health, gut health concerns,
               women's health, weight management, oncology (cancer) and chronic health conditions.
