@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createBooking } from '@/lib/bookings';
+import { createBooking, updateBooking } from '@/lib/bookings';
 import { sendClientReceiptEmail, sendAdminNotificationEmail } from '@/lib/email';
 import { createCalendarEvent, isGoogleCalendarConfigured } from '@/lib/googleCalendar';
 import { services } from '@/data/content';
@@ -40,9 +40,12 @@ export async function POST(req: NextRequest) {
           console.error('Calendar/Meet creation failed:', err);
         }
       }
+      const finalBooking = meetUrl
+        ? (await updateBooking(booking.id, { meetUrl })) ?? booking
+        : booking;
       await Promise.allSettled([
-        sendClientReceiptEmail(booking, meetUrl),
-        sendAdminNotificationEmail(booking, meetUrl),
+        sendClientReceiptEmail(finalBooking, meetUrl),
+        sendAdminNotificationEmail(finalBooking, meetUrl),
       ]);
     }
 

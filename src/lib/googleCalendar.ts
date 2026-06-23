@@ -7,7 +7,7 @@ const LONDON_TZ = 'Europe/London';
 
 export const ALL_SLOTS = [
   '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
-  '12:00', '12:30', '13:00', '13:30',
+  '12:00', '12:30', '13:00', '13:30','20:06'
 ];
 
 export const SERVICE_DURATION: Record<string, number> = {

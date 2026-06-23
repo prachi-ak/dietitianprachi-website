@@ -23,6 +23,8 @@ export interface Booking {
   stripeSessionId?: string;
   paymentStatus: 'not_required' | 'pending' | 'paid';
   createdAt: string;
+  meetUrl?: string;
+  reminderSent?: boolean;
 }
 
 export async function createBooking(

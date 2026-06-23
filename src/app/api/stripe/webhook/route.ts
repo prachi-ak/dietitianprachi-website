@@ -40,9 +40,12 @@ export async function POST(req: NextRequest) {
             console.error('Calendar/Meet creation failed:', err);
           }
         }
+        const finalBooking = meetUrl
+          ? (await updateBooking(confirmed.id, { meetUrl })) ?? confirmed
+          : confirmed;
         await Promise.allSettled([
-          sendClientReceiptEmail(confirmed, meetUrl),
-          sendAdminNotificationEmail(confirmed, meetUrl),
+          sendClientReceiptEmail(finalBooking, meetUrl),
+          sendAdminNotificationEmail(finalBooking, meetUrl),
         ]);
       }
     }
