@@ -31,7 +31,7 @@ The first step is a complimentary 15-minute Discovery Call. This allows us to di
 To learn more about the Integrative Health Blueprint Programme and how it may support your health journey, book a complimentary Discovery Call.
 Prefer to ask a question first? Feel free to get in touch.
 
-Suggested CTA Buttons
+Suggested Buttons:
 Primary CTA
 Book a Complimentary Discovery Call
 Secondary CTA
