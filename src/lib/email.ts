@@ -34,6 +34,7 @@ function footer() {
 }
 
 const INTAKE_FORMS: Record<string, string> = {
+  'discovery-call':   'https://forms.gle/HwDbrgqtakYCTyWf9',
   'general-initial':  'https://forms.gle/WS8941vh5RcSZx3ZA',
   'oncology-initial': 'https://forms.gle/9P5wz1Pzg76CeTFX7',
 };

@@ -4,8 +4,8 @@ import { services } from '@/data/content';
 import { Clock, CheckCircle2, Info } from 'lucide-react';
 
 const paidGroups = [
-  { key: 'general',  label: 'Personalised Nutrition & Lifestyle Support' },
-  { key: 'oncology', label: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support' },
+  { key: 'general',  label: 'Personalised Nutrition & Lifestyle Support',                    image: null },
+  { key: 'oncology', label: 'Specialist Cancer (Oncology) Nutrition & Lifestyle Support',    image: '/cancer-image.png' },
 ] as const;
 
 export default function Services() {
@@ -71,6 +71,18 @@ export default function Services() {
                   {group.label}
                 </h3>
 
+                {group.image && (
+                  <div className="rounded-xl overflow-hidden mb-8 shadow-sm">
+                    <Image
+                      src={group.image}
+                      alt={group.label}
+                      width={1200}
+                      height={800}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-6">
                   {groupServices.map((s) => (
                     <div
@@ -133,6 +145,97 @@ export default function Services() {
             );
           })}
         </div>
+
+        {/* 3-Month Integrative Health Blueprint Programme */}
+        <div className="mt-16 md:mt-24">
+          <div className="rounded-2xl overflow-hidden mb-10 shadow-sm">
+            <Image
+              src="/blueprint-banner.png"
+              alt="The Integrative Health Blueprint Programme"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+            />
+          </div>
+
+          <div className="bg-white border border-sage-100 rounded-xl p-8 md:p-12">
+            <span className="inline-block font-sans text-xs tracking-widest uppercase bg-sage-100 text-sage-600 px-3 py-1 rounded-full mb-4">
+              Signature Programme
+            </span>
+            <h3 className="font-serif text-3xl text-sage-800 mb-2">
+              The Integrative Health Blueprint Programme
+            </h3>
+            <p className="font-sans text-sage-500 text-sm mb-6">A 3-Month Personalised Nutrition &amp; Lifestyle Coaching Programme</p>
+
+            <p className="font-sans text-sage-600 text-base leading-relaxed mb-8 max-w-3xl">
+              If you have tried diets, nutrition plans, or wellness programmes before but struggled to create lasting change,
+              this programme is designed differently. Rather than focusing on food alone, we work across five interconnected
+              pillars of health to create the foundation for better energy, improved metabolic health, digestive wellbeing,
+              weight management, hormone balance, resilience, and long-term health outcomes.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-10 mb-10">
+              <div>
+                <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">What&apos;s Included</p>
+                <ul className="space-y-2.5">
+                  {[
+                    'Comprehensive health, nutrition and lifestyle assessment',
+                    'Review and interpretation of existing laboratory results',
+                    'Personalised nutrition and lifestyle plan tailored to your health goals',
+                    'Weekly coaching and accountability check-ins',
+                    'Ongoing support between sessions via WhatsApp',
+                    'Continuous plan refinement based on your progress',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <CheckCircle2 size={15} className="text-sage-400 flex-shrink-0 mt-0.5" />
+                      <span className="font-sans text-sm text-sage-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">Five Pillars of Health</p>
+                <ul className="space-y-2.5">
+                  {[
+                    'Personalised, Evidence-Based Nutrition',
+                    'Exercise & Movement',
+                    'Restorative Sleep',
+                    'Stress & Emotional Wellbeing',
+                    'Sustainable Behaviour Change',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <CheckCircle2 size={15} className="text-sage-400 flex-shrink-0 mt-0.5" />
+                      <span className="font-sans text-sm text-sage-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-sage-100 pt-8">
+              <p className="font-sans text-sage-600 text-sm leading-relaxed mb-6">
+                The first step is a complimentary 15-minute Discovery Call to discuss your health goals, current challenges,
+                and whether the programme is the right fit for your needs.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/book?service=discovery-call"
+                  className="py-3 px-7 rounded text-sm font-sans tracking-wide bg-sage-800 hover:bg-sage-700 text-white transition-colors"
+                >
+                  Book a Complimentary Discovery Call
+                </Link>
+                <Link
+                  href="/#contact"
+                  className="py-3 px-7 rounded text-sm font-sans tracking-wide border border-sage-300 text-sage-700 hover:border-sage-400 transition-colors"
+                >
+                  Send an Enquiry
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
