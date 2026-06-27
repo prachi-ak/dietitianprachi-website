@@ -48,17 +48,6 @@ export default function Services() {
           </div>
         )}
 
-        {/* Lifestyle visual break */}
-        <div className="rounded-2xl overflow-hidden mb-10 md:mb-14 shadow-sm">
-          <Image
-            src="/lifestyle-pic.png"
-            alt="Personalised nutrition and lifestyle support"
-            width={1200}
-            height={500}
-            className="w-full h-56 md:h-72 object-cover object-center"
-          />
-        </div>
-
         {/* Paid service groups */}
         <div className="space-y-12 md:space-y-16">
           {paidGroups.map((group) => {
@@ -70,6 +59,19 @@ export default function Services() {
                 <h3 className="font-serif text-2xl text-sage-800 mb-8 pb-4 border-b border-sage-200">
                   {group.label}
                 </h3>
+
+                {/* Lifestyle image sits under the general group heading */}
+                {group.key === 'general' && (
+                  <div className="rounded-2xl overflow-hidden mb-8 shadow-sm">
+                    <Image
+                      src="/lifestyle-pic.png"
+                      alt="Personalised nutrition and lifestyle support"
+                      width={1200}
+                      height={500}
+                      className="w-full h-56 md:h-72 object-cover object-center"
+                    />
+                  </div>
+                )}
 
                 {group.image && (
                   <div className="rounded-xl overflow-hidden mb-8 shadow-sm">
@@ -167,11 +169,14 @@ export default function Services() {
             </h3>
             <p className="font-sans text-sage-500 text-sm mb-6">A 3-Month Personalised Nutrition &amp; Lifestyle Coaching Programme</p>
 
+            <p className="font-sans text-sage-600 text-base leading-relaxed mb-4 max-w-3xl">
+              For individuals seeking structured, personalised support and accountability to create meaningful, lasting improvements in their health and wellbeing.
+            </p>
+            <p className="font-sans text-sage-600 text-base leading-relaxed mb-4 max-w-3xl">
+              If you have tried diets, nutrition plans, or wellness programmes before but struggled to create lasting change, this programme is designed differently.
+            </p>
             <p className="font-sans text-sage-600 text-base leading-relaxed mb-8 max-w-3xl">
-              If you have tried diets, nutrition plans, or wellness programmes before but struggled to create lasting change,
-              this programme is designed differently. Rather than focusing on food alone, we work across five interconnected
-              pillars of health to create the foundation for better energy, improved metabolic health, digestive wellbeing,
-              weight management, hormone balance, resilience, and long-term health outcomes.
+              The Integrative Health Blueprint Programme is my signature 3-month coaching programme that combines personalised, evidence-based nutrition with lifestyle strategies to help you improve your health in a sustainable and realistic way. Rather than focusing on food alone, we work across five interconnected pillars of health to create the foundation for better energy, improved metabolic health, digestive wellbeing, weight management, hormone balance, resilience, and long-term health outcomes.
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 mb-10">
@@ -213,10 +218,31 @@ export default function Services() {
               </div>
             </div>
 
+            <div className="mb-10">
+              <p className="font-sans text-xs uppercase tracking-widest text-sage-400 mb-4">Who Is This Programme For?</p>
+              <p className="font-sans text-sm text-sage-600 leading-relaxed mb-3">This programme is ideal for individuals who:</p>
+              <ul className="space-y-2.5">
+                {[
+                  'Want a personalised and evidence-based approach to improving their health',
+                  'Are looking for support with metabolic health, gut health, women\'s health, weight management, cancer care, or recovery',
+                  'Feel overwhelmed by conflicting health information',
+                  'Are looking for expert guidance, accountability, and ongoing support',
+                  'Are ready to make meaningful and sustainable lifestyle changes',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <CheckCircle2 size={15} className="text-sage-400 flex-shrink-0 mt-0.5" />
+                    <span className="font-sans text-sm text-sage-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="border-t border-sage-100 pt-8">
+              <p className="font-sans text-sage-600 text-sm leading-relaxed mb-2">
+                The first step is a complimentary 15-minute Discovery Call. This allows us to discuss your health goals, current challenges, and whether the programme is the right fit for your needs.
+              </p>
               <p className="font-sans text-sage-600 text-sm leading-relaxed mb-6">
-                The first step is a complimentary 15-minute Discovery Call to discuss your health goals, current challenges,
-                and whether the programme is the right fit for your needs.
+                To learn more about the Integrative Health Blueprint Programme and how it may support your health journey, book a complimentary Discovery Call. Prefer to ask a question first? Feel free to get in touch.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
